@@ -1,0 +1,51 @@
+# This file was created Mon May  6 16:10:22 2019
+# Created by:
+#                     :-) GROMACS - gmx analyze, 2016.1 (-:
+# 
+# Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
+# Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+# Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
+# Command line:
+#   gmx analyze -f pressure.xvg -ee errest_pressure.xvg
+# gmx analyze is part of G R O M A C S:
+#
+# Gnomes, ROck Monsters And Chili Sauce
+#
+@    title "Error estimates"
+@    xaxis  label "Block size (time)"
+@    yaxis  label "Error estimate"
+@TYPE xy
+@ subtitle "using block averaging, total time 50000 (251 points)"
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "av 8955.026120"
+@ s1 legend "ee 30.1628"
+200 26.8194 21.2534
+400 26.1841 25.1661
+600 26.2923 26.8131
+800 26.6166 27.6701
+1000 23.754 28.1833
+1200 25.3129 28.5223
+1400 30.8736 28.7623
+1600 29.5053 28.941
+1800 29.2578 29.0793
+2000 26.5121 29.1895
+2200 31.1592 29.2793
+2600 29.5315 29.4169
+2800 34.2582 29.4708
+3200 31.1904 29.5582
+3400 30.923 29.5941
+3800 32.0319 29.6545
+4000 26.6726 29.6801
+4400 32.2138 29.7243
+5000 34.8061 29.7773
+5400 26.0813 29.806
+6200 30.3998 29.8523
+7000 29.0165 29.8879
+8200 33.9924 29.9283
+10000 32.2973 29.9706
+12400 8.63387 30.0079

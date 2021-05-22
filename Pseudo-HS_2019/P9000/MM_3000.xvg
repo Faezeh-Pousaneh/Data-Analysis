@@ -1,0 +1,36 @@
+# This file was created Mon Apr 29 18:08:53 2019
+# Created by:
+#                       :-) GROMACS - gmx tcaf, 2016.1 (-:
+# 
+# Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
+# Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+# Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
+# Command line:
+#   gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 3000 -ov MM_3000.xvg
+# gmx tcaf is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Fits"
+@    xaxis  label "k (nm\S-1\N)"
+@    yaxis  label "\xh\f{} (10\S-3\N kg m\S-1\N s\S-1\N)"
+@TYPE xy
+@    s0 symbol 2
+@    s0 symbol color 1
+@    s0 linestyle 0
+ 1.837 0.903623
+ 1.837 0.90618
+ 1.837 0.915869
+ 2.598 0.73731
+ 2.598 0.751305
+ 2.598 0.735798
+ 2.598 0.739553
+ 2.598 0.739454
+ 2.598 0.743135
+ 3.182 0.658675
+ 3.182 0.649283
+ 3.182 0.663702
+ 3.182 0.651508
+ 3.674 0.602672
+ 3.674 0.59835
+ 3.674 0.601813

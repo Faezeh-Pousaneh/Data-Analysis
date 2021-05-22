@@ -1,0 +1,39 @@
+#!/bin/bash
+#PBS -A nn9573k
+#PBS -l walltime=3:30:00
+#PBS -l select=1:ncpus=32:mpiprocs=16
+
+
+module purge
+module load intelcomp/17.0.0
+module load mpt/2.14
+module load gromacs/2016.1
+
+case=$PBS_JOBNAME
+cd $PBS_O_WORKDIR
+
+
+
+
+array=( 0.045  0.09 0.27 0.54 0.90  2.70 )
+for j in "${array[@]}"
+do
+
+cd ${j}salt
+
+# gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 500 -ref 2 -sel 5 -o rdf_lut_wat.xvg
+
+gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 100 -ref 2 -sel 4 -o rdf_lut_weo.xvg
+
+# gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 500 -ref 3 -sel 5 -o rdf_cl_wat.xvg
+
+# gmx rdf  -f  NPT.xtc  -s  NPT.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 200000 -ref 4 -sel 3 -o rdf_weo_cl.xvg
+
+#gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 100 -ref 4 -sel 5  -o rdf_weo_sol.xvg
+
+gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 10 -ref 4 -sel 4  -o rdf_weo_weo.xvg
+
+gmx rdf  -f  NPT_rdf.xtc  -s  NPT_rdf.tpr  -pbc      -selrpos  mol_com -seltype  mol_com  -b 10 -ref 3 -sel 3  -o rdf_cl_cl.xvg
+
+cd ..
+done

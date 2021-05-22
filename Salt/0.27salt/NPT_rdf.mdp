@@ -1,0 +1,42 @@
+ integrator                = md
+ dt                        = 0.002	; 
+ nsteps                    = 300000	;  
+
+ nstxout                   = 1000	; save coordinates every 0 ps
+ nstvout                   = 1000	; save velocities every 0 ps
+ nstlog                    = 1000	; update log file every 
+ nstenergy                 = 1000	; save energies every 
+ nstxtcout                 = 1000	; Output frequency for xtc file
+
+ ns_type		   = grid	; search neighboring grid cells
+ nstlist		   = 10		; fs
+ pbc		           = xyz	; 3-D PBC
+ rlist		           = 1.2	; short-range neighborlist cutoff (in nm)
+ rcoulomb	           = 1.2	; short-range electrostatic cutoff (in nm)
+ rvdw		           = 1.2	; short-range van der Waals cutoff (in nm)
+
+ coulombtype	           = PME	; Parti	cle Mesh Ewald for long-range electrostatics
+ pme_order                 = 4		; cubic interpolation
+ fourierspacing            = 0.16       ; grid spacing for FFT
+ vdw-type                  = cut-off
+ DispCorr                  = no         ;  EnerPres    ; account for cut-off vdW scheme
+
+ Tcoupl                    = V-rescale  	; Tidligere modified Berendsen thermostat
+ tc-grps	           = LUT SOL CL _WEO    ; two coupling groups - more accurate
+ tau_t                     = 0.1 0.1 0.1 0.1    ; time constant, in ps
+ ref_t                     = 380 380 380 380	; reference temperature, one for each group, in K.
+ energygrps                = LUT SOL CL _WEO
+ Pcoupl                    = Parrinello-Rahman
+ Pcoupltype                = Isotropic
+ tau_p                     = 1.0
+ compressibility           = 4.5e-5
+ ref_p                     = 1.0		; 1 bar
+
+ gen_vel                   = no		; 
+
+ constraints               = all-bonds	; all bonds constrained (fixed length)
+ continuation		   = yes        ; Restarting after NPT 
+ constraint-algorithm      = lincs	; holonomic constraints 
+ lincs_iter	           = 1		; accuracy of LINCS
+ lincs_order	           = 4		; also related to accuracy
+

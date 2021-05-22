@@ -1,0 +1,224 @@
+                      :-) GROMACS - gmx grompp, 2016.1 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2015, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.1
+Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
+Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
+Command line:
+  gmx grompp -f NVT2.mdp -c NPT.gro -p topol.top -o NVT2.tpr -maxwarn 3 -t NPT.cpt
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+
+Back Off! I just backed up mdout.mdp to ./#mdout.mdp.2#
+
+NOTE 1 [file NVT2.mdp]:
+  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
+  removed in a future release when all interaction forms are supported for
+  the verlet scheme. The verlet scheme already scales better, and it is
+  compatible with GPUs and other accelerators.
+
+
+NOTE 2 [file NVT2.mdp]:
+  The Berendsen thermostat does not generate the correct kinetic energy
+  distribution. You might want to consider using the V-rescale thermostat.
+
+Setting the LD random seed to 1469084113
+Generated 168 of the 1653 non-bonded parameter combinations
+Excluding 1 bonded neighbours molecule type 'AR'
+Number of degrees of freedom in T-Coupling group System is 2997.00
+
+WARNING 1 [file NVT2.mdp]:
+  You are using full electrostatics treatment PME-User for a system without
+  charges.
+  This costs a lot of performance for just processing zeros, consider using
+  Cut-off instead.
+
+
+Reading Coordinates, Velocities and Box size from old trajectory
+Will read whole trajectory
+Last frame         -1 time 60000.000   
+Using frame at t = 60000 ps
+Starting time for run is 0 ps
+Estimate for the relative computational load of the PME mesh part: 0.25
+
+There were 2 notes
+
+There was 1 warning
+
+Back Off! I just backed up NVT2.tpr to ./#NVT2.tpr.2#
+
+GROMACS reminds you: "Safety lights are for dudes" (Ghostbusters 2016)
+
+                        :-) GROMACS - mdrun, 2016.1 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2015, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      mdrun, version 2016.1
+Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
+Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
+Command line:
+  mdrun -s NVT2.tpr -deffnm NVT2 -table Table_HS_modif.xvg
+
+
+Back Off! I just backed up NVT2.log to ./#NVT2.log.2#
+
+Running on 1 node with total 16 cores, 32 logical cores
+Hardware detected on host r3i0n9 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+    SIMD instructions most likely to fit this hardware: AVX_256
+    SIMD instructions selected at GROMACS compile time: AVX_256
+
+  Hardware topology: Basic
+
+
+The current CPU can measure timings more accurately than the code in
+mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+Reading file NVT2.tpr, VERSION 2016.1 (single precision)
+The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
+Using 16 MPI processes
+
+
+NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
+removed in a future release when 'verlet' supports all interaction forms.
+
+
+Non-default thread affinity set probably by the OpenMP library,
+disabling internal thread affinity
+
+Back Off! I just backed up NVT2.xtc to ./#NVT2.xtc.2#
+
+Back Off! I just backed up NVT2.trr to ./#NVT2.trr.2#
+
+Back Off! I just backed up NVT2.edr to ./#NVT2.edr.1#
+starting mdrun 'Liquid Argon'
+7000000 steps,  14000.0 ps.
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+
+Received the TERM signal, stopping within 20 steps
+
+
+ Average load imbalance: 7.1 %
+ Part of the total run time spent waiting due to load imbalance: 1.1 %
+
+
+NOTE: 6 % of the run time was spent communicating energies,
+      you might want to use the -gcom option of mdrun
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      137.637        8.602     1600.0
+                 (ns/day)    (hour/ns)
+Performance:      942.735        0.025
+
+GROMACS reminds you: "It's So Fast It's Slow" (F. Black)
+

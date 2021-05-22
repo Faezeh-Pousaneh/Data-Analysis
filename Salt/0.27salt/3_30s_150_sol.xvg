@@ -1,0 +1,74 @@
+# This file was created Wed Jul  3 13:21:04 2019
+# Created by:
+#                     :-) GROMACS - gmx density, 2018.3 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/gudrung/mount/resizedBoxes/b30salt
+# Command line:
+#   gmx density -f NPT.xtc -s NPT.tpr -b 150000 -o 3_30s_150_sol.xvg -dens num
+# gmx density is part of G R O M A C S:
+#
+# Gnomes, ROck Monsters And Chili Sauce
+#
+@    title "Partial density"
+@    xaxis  label "Coordinate (nm)"
+@    yaxis  label "Number density (nm\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "SOL"
+    0.165177          111.846
+     0.49553          111.142
+    0.825883          111.589
+     1.15624          111.664
+     1.48659          111.517
+     1.81694          110.732
+     2.14729          109.993
+     2.47765          108.186
+       2.808          104.836
+     3.13835          98.4082
+     3.46871          89.2126
+     3.79906          78.0796
+     4.12941          65.8193
+     4.45977          53.4528
+     4.79012          40.6058
+     5.12047          31.1711
+     5.45083          25.0163
+     5.78118          21.0968
+     6.11153          17.6719
+     6.44188          16.2783
+     6.77224          15.7071
+     7.10259          15.4571
+     7.43294          15.5259
+      7.7633          15.0855
+     8.09365          15.3398
+       8.424           14.969
+     8.75436          15.4009
+     9.08471          14.8989
+     9.41506          14.4524
+     9.74542          14.7424
+     10.0758          15.6009
+     10.4061          16.0229
+     10.7365          16.4256
+     11.0668          17.1212
+     11.3972           19.296
+     11.7275          23.3381
+     12.0579          29.6206
+     12.3882          38.6572
+     12.7186          50.2418
+     13.0489          64.0833
+     13.3793           77.749
+     13.7097          89.0602
+       14.04          98.3572
+     14.3704          103.724
+     14.7007          107.575
+     15.0311          110.713
+     15.3614          111.287
+     15.6918          111.193
+     16.0221          111.558
+     16.3525          111.441

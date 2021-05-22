@@ -1,0 +1,95 @@
+etazero(a)=(0.1763578244/(a))
+etaEns(rho,S)=(0.1763578244*(1.016/gCS(rho,1.0)+0.8*Vexcl(1.0,0.0)*rho+0.7760*Vexcl(1.0,0.0)*Vexcl(1.0,0.0)*rho*rho*gCS(rho,1.0)))
+ksi(rho,S)=((1.0*pi/6.0)*rho)
+gCS(rho,S)=((1.0-0.5*ksi(rho,1.0))/(1.0-ksi(rho,1.0))**3.0)
+Zhs(rho,S)=((1.0+ksi(rho,1.0)+ksi(rho,1.0)**2.0-ksi(rho,1.0)**3.0)/(1.0-ksi(rho,1.0))**3.0)
+Vexcl(S,m)=(((2.0/3.0)*pi)*(1.0**3.0))
+
+######################################################################
+I1(m,S)=((4.0/3.0)*lambda(m,S)**2.0+(4.0/75.0)*lambda(m,S)**4.0+(116.0/55125.0)*lambda(m,S)**6.0)
+I2(m,S)=((4.0*log(2.0)+2.0/3.0)*lambda(m,S)**2.0-(20.0/9.0)*lambda(m,S)**3.0+((661727.0/9600.0)-(1468.0/15.0)*log(2.0))*lambda(m,S)**4.0-0.1547*lambda(m,S)**5.0+0.1116*lambda(m,S)**6.0-0.0143*lambda(m,S)**7.0+0.0105*lambda(m,S)**8.0-0.0015*lambda(m,S)**9.0+0.0007*lambda(m,S)**10.0-0.000130*lambda(m,S)**11.0+0.00004*lambda(m,S)**12.0)
+I3(m,S)=(2.901720*lambda(m,S)**2.0-7.0500*lambda(m,S)**3.0+1.04490*lambda(m,S)**4.0+9.48830*lambda(m,S)**5.0-4.35900*lambda(m,S)**6.0)
+I4(m,S)=(-49.14760*lambda(m,S)**2.0+64.76730*lambda(m,S)**3.0+11.07280*lambda(m,S)**4.0-27.15310*lambda(m,S)**5.0-3.9332*lambda(m,S)**6.0+9.1977*lambda(m,S)**7.0-1.2892*lambda(m,S)**8.0)
+######################################################################
+lambda(m,S)=(m**2.0/(S**3.0))
+m0=0.0000
+m1=(1.014)
+m2=(1.41)
+m3=(1.73)
+m4=(2.00)
+m6=(2.4559)
+
+S0=1.0
+######################################################################
+f(rho,S,m)=-log((1.0+I1(m,S)*ksi(rho,S)+(1.0/2.0)*I2(m,S)*ksi(rho,S)**2.0+(1.0/3.0)*I3(m,S)*ksi(rho,S)**3.0+(1.0/4.0)*I4(m,S)*ksi(rho,S)**4.0))
+Zex(rho,S,m)=rho*((f(rho+0.0001,S,m)-f(rho,S,m))/0.0001)
+
+U(rho,S,m)=(1.0/2.0)*m*((f(rho,S,m+0.0001)-f(rho,S,m))/0.0001)
+Z(rho,S,m)=(Zhs(rho,S)+Zex(rho,S,m))
+g(rho,S,m)=(1.0/(4.0*ksi(rho,S)))*(Z(rho,S,m)-1.0-U(rho,S,m))
+
+#eta(rho,S,m,a)=etazero(a)*((1.016/g(rho,S,m))+0.8*Vexcl(S,m)*rho+ 0.776*Vexcl(S,m)*Vexcl(S,m)*rho*rho*g(rho,S,m))
+eta(rho,S,m,a)=etazero(a)*Vexcl(S,m)*rho*((1.016/(Z(rho,S,m)-1.0-U(rho,S,m)))+0.8+0.776*(Z(rho,S,m)-1.0-U(rho,S,m)))
+#########################################################################################
+fiterrorfunction(deta,rho) = deta
+
+set print "fits_RDF.tex"
+fit [0.08:0.7] g(x,S1,m1) "1.txt" u 5:($7) via S1
+print "1 &","\\\\"
+fit [0.08:0.7] g(x,S2,m2) "2.txt" u 5:($7) via S2
+print "2 &","\\\\"
+fit [0.08:0.7] g(x,S3,m3) "3.txt" u 5:($7) via S3
+print "3 &","\\\\"
+fit [0.08:0.7] g(x,S4,m4) "4.txt" u 5:($7) via S4
+print "4 &","\\\\"
+fit [0.08:0.7] g(x,S6,m6) "6.txt" u 5:($7) via S6
+print "6 &","\\\\"
+#############################################################
+unset colorbox
+set key font ",16"
+  set border 
+  set border lw 3
+set tics font ", 19"
+set xtics font ", 17"
+set ytics font ", 17
+
+set key spacing 1.5
+set key left
+set pointsize 1.5
+     set size 0.57,0.7
+set xtics 0.1
+set ytics 5
+set grid ytics lc rgb "#bbbbbb" lw 1 lt 0
+set key top right reverse
+set style func linespoints
+set xlabel "x-units" font ",19"
+set ylabel "y-units" font ",19"
+set key spacing 1.
+set for [i=1:5] linetype i dt i
+set xtics 0.1
+set termoption dash
+set output "RDF.eps"
+set yrange [-0.5:5.0]
+set xrange [0.01:0.45]
+set term post enh color eps
+rescalefunction(x) = etaEns(x)
+set ylabel "g({/Symbol x}^*)"
+set xlabel "{/Symbol x}^*"
+plot \
+    "1.txt" u ($5)*pi/6.0:($7)   title "{/Symbol l}=1"   ps 2 pt 12 pi 5  lw 2   lc rgb  'red'  ,\
+    "2.txt" u ($5)*pi/6.0:($7)   title "{/Symbol l}=2"   lt 6   lw 2  lc rgb 'blue'  ,\
+    "2_big.txt" u ($5)*pi/6.0:($7)   title "{/Symbol l}=2"   lt 6   lw 2  lc rgb 'green'  ,\
+    "3.txt" u ($5)*pi/6.0:($7)   title "{/Symbol l}=3"   lt 4   lw 2   lc rgb 'dark-green'   ,\
+    "4.txt" u ($5)*pi/6.0:($7)   title "{/Symbol l}=4"    ps 2 lt 8 lw 2    lc rgb 'magenta'  ,\
+    "1.txt" u ($5)*pi/6.0:($7)   notitle "{/Symbol l}=1"   ps 2 pt 12 pi 5  lw 2   lc rgb  'red'  ,\
+    "2.txt" u ($5)*pi/6.0:($7)   notitle "{/Symbol l}=2"   lt 6   lw 2  lc rgb 'blue'  ,\
+    "3.txt" u ($5)*pi/6.0:($7)   notitle "{/Symbol l}=3"   lt 4   lw 2   lc rgb 'dark-green'   ,\
+    "4.txt" u ($5)*pi/6.0:($7)   notitle "{/Symbol l}=4"    ps 2 lt 8 lw 0    lc rgb 'magenta'  ,\
+    g(x*6.0/pi,1.0,m1)  title   "Theory"      with line  lw 8  lc 0 ,\
+    g(x*6.0/pi,1.0,m2) notitle      with line  lw 8  lc 0 ,\
+    g(x*6.0/pi,1.0,m3) notitle      with line  lw 8  lc 0 ,\
+    g(x*6.0/pi,1.0,m4) notitle      with line  lw 8  lc 0
+set output
+
+
+

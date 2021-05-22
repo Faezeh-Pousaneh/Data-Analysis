@@ -1,0 +1,36 @@
+# This file was created Mon Apr 29 18:05:25 2019
+# Created by:
+#                       :-) GROMACS - gmx tcaf, 2016.1 (-:
+# 
+# Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
+# Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+# Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
+# Command line:
+#   gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 2000 -ov MM_2000.xvg
+# gmx tcaf is part of G R O M A C S:
+#
+# Getting the Right Output Means no Artefacts in Calculating Stuff
+#
+@    title "Fits"
+@    xaxis  label "k (nm\S-1\N)"
+@    yaxis  label "\xh\f{} (10\S-3\N kg m\S-1\N s\S-1\N)"
+@TYPE xy
+@    s0 symbol 2
+@    s0 symbol color 1
+@    s0 linestyle 0
+ 1.837 0.9061
+ 1.837 0.918878
+ 1.837 0.915213
+ 2.598 0.739739
+ 2.598 0.74707
+ 2.598 0.735886
+ 2.598 0.745716
+ 2.598 0.740464
+ 2.598 0.74521
+ 3.182 0.658623
+ 3.182 0.652247
+ 3.182 0.660111
+ 3.182 0.652712
+ 3.674 0.601774
+ 3.674 0.598297
+ 3.674 0.601654

@@ -1,0 +1,153 @@
+                      :-) GROMACS - gmx grompp, 2016.1 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2015, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.1
+Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
+Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+Working dir:  /home/ntnu/pousaneh/Salt_ntnu/Gudrun-F/0.27salt
+Command line:
+  gmx grompp -f NPT_rdf.mdp -c NPT.gro -p topol.top -o NPT_rdf.tpr -maxwarn 3
+
+
+NOTE 1 [file NPT_rdf.mdp, line 43]:
+  NPT_rdf.mdp did not specify a value for the .mdp option "cutoff-scheme".
+  Probably it was first intended for use with GROMACS before 4.6. In 4.6,
+  the Verlet scheme was introduced, but the group scheme was still the
+  default. The default is now the Verlet scheme, so you will observe
+  different behaviour.
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+
+Back Off! I just backed up mdout.mdp to ./#mdout.mdp.1#
+Setting the LD random seed to 1435420508
+Generated 345 of the 1830 non-bonded parameter combinations
+Excluding 3 bonded neighbours molecule type 'LUT'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 1 bonded neighbours molecule type 'CL'
+Excluding 3 bonded neighbours molecule type '_WEO'
+Cleaning up constraints and constant bonded interactions with virtual sites
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group LUT is 65998.91
+Number of degrees of freedom in T-Coupling group SOL is 113818.13
+Number of degrees of freedom in T-Coupling group CL is 90.00
+Number of degrees of freedom in T-Coupling group _WEO is 2609.96
+Estimate for the relative computational load of the PME mesh part: 0.14
+
+There was 1 note
+
+GROMACS reminds you: "Can someone please tell Icarus that he's not the only one falling from the sky?" (Urban Dance Squad)
+
+                        :-) GROMACS - mdrun, 2016.1 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2015, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      mdrun, version 2016.1
+Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
+Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
+Working dir:  /home/ntnu/pousaneh/Salt_ntnu/Gudrun-F/0.27salt
+Command line:
+  mdrun -s NPT_rdf.tpr -deffnm NPT_rdf
+
+
+Running on 4 nodes with total 64 cores, 128 logical cores
+  Cores per node:           16
+  Logical cores per node:   32
+Hardware detected on host r4i4n0 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+    SIMD instructions most likely to fit this hardware: AVX_256
+    SIMD instructions selected at GROMACS compile time: AVX_256
+
+  Hardware topology: Basic
+
+
+The current CPU can measure timings more accurately than the code in
+mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+Reading file NPT_rdf.tpr, VERSION 2016.1 (single precision)
+Changing nstlist from 10 to 25, rlist from 1.2 to 1.219
+
+The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
+
+Will use 48 particle-particle and 16 PME only ranks
+This is a guess, check the performance at the end of the log file
+Using 64 MPI processes
+Using 1 OpenMP thread per MPI process
+
+
+Non-default thread affinity set probably by the OpenMP library,
+disabling internal thread affinity
+starting mdrun 'Lutidine, water and 30 salt  --- BOX: 9 9 17'
+300000 steps,    600.0 ps.
+
+step 75 Turning on dynamic load balancing, because the performance loss due to load imbalance is 20.4 %.
+
+
+Writing final coordinates.
+
+ Average load imbalance: 2.3 %
+ Part of the total run time spent waiting due to load imbalance: 1.7 %
+ Steps where the load balancing was limited by -rdd, -rcon and/or -dds: X 0 % Y 0 % Z 0 %
+ Average PME mesh/force load: 0.400
+ Part of the total run time spent waiting due to PP/PME imbalance: 12.2 %
+
+NOTE: 12.2 % performance was lost because the PME ranks
+      had less work to do than the PP ranks.
+      You might want to decrease the number of PME ranks
+      or decrease the cut-off and the grid spacing.
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:   121855.590     1903.994     6400.0
+                         31:43
+                 (ns/day)    (hour/ns)
+Performance:       27.227        0.881
+
+GROMACS reminds you: "With a Little Penknife" (Nick Cave)
+
