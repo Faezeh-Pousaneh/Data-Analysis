@@ -1,957 +1,0 @@
-rm: cannot remove `MM_*': No such file or directory
-rm: cannot remove `*step*': No such file or directory
-rm: cannot remove `*#*': No such file or directory
-rm: cannot remove `NVT.gro': No such file or directory
-rm: cannot remove `NPT.gro': No such file or directory
-rm: cannot remove `NVT2.gro': No such file or directory
-                      :-) GROMACS - gmx grompp, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx grompp, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx grompp -f em.mdp -c box.gro -p topol.top -o em.tpr -maxwarn 3
-
-
-Back Off! I just backed up mdout.mdp to ./#mdout.mdp.1#
-
-NOTE 1 [file em.mdp]:
-  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
-  removed in a future release when all interaction forms are supported for
-  the verlet scheme. The verlet scheme already scales better, and it is
-  compatible with GPUs and other accelerators.
-
-Setting the LD random seed to 1986092750
-Generated 168 of the 1653 non-bonded parameter combinations
-Excluding 1 bonded neighbours molecule type 'AR'
-Number of degrees of freedom in T-Coupling group rest is 2997.00
-
-WARNING 1 [file em.mdp]:
-  You are using full electrostatics treatment PME-User for a system without
-  charges.
-  This costs a lot of performance for just processing zeros, consider using
-  Cut-off instead.
-
-
-Estimate for the relative computational load of the PME mesh part: 0.70
-
-NOTE 2 [file em.mdp]:
-  The optimal PME mesh load for parallel simulations is below 0.5
-  and for highly parallel simulations between 0.25 and 0.33,
-  for higher performance, increase the cut-off and the PME grid spacing.
-
-
-
-NOTE 3 [file em.mdp]:
-  This run will generate roughly 57278 Mb of data
-
-
-There were 3 notes
-
-There was 1 warning
-
-GROMACS reminds you: "Don't Follow Me Home" (Throwing Muses)
-
-                        :-) GROMACS - mdrun, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      mdrun, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  mdrun -s em.tpr -deffnm em -table Table_HS_modif.xvg
-
-
-Running on 1 node with total 16 cores, 32 logical cores
-Hardware detected on host r10i2n1 (the node of MPI rank 0):
-  CPU info:
-    Vendor: Intel
-    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    SIMD instructions most likely to fit this hardware: AVX_256
-    SIMD instructions selected at GROMACS compile time: AVX_256
-
-  Hardware topology: Basic
-
-
-The current CPU can measure timings more accurately than the code in
-mdrun was configured to use. This might affect your simulation
-speed as accurate timings are needed for load-balancing.
-Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
-
-Reading file em.tpr, VERSION 2016.1 (single precision)
-The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
-Using 16 MPI processes
-
-
-NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
-removed in a future release when 'verlet' supports all interaction forms.
-
-
-Non-default thread affinity set probably by the OpenMP library,
-disabling internal thread affinity
-
-Steepest Descents:
-   Tolerance (Fmax)   =  1.00000e+03
-   Number of steps    =    150000000
-
-writing lowest energy coordinates.
-
-Steepest Descents converged to Fmax < 1000 in 2 steps
-Potential Energy  =  7.1614975e+01
-Maximum force     =  5.5756580e+02 on atom 978
-Norm of force     =  1.3585739e+02
-
-GROMACS reminds you: "I Snipe Like Wesley" (Urban Dance Squad)
-
-                      :-) GROMACS - gmx grompp, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx grompp, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx grompp -f NVT_e.mdp -c em.gro -p topol.top -o NVT_e.tpr -maxwarn 3
-
-Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
-
-Back Off! I just backed up mdout.mdp to ./#mdout.mdp.2#
-
-NOTE 1 [file NVT_e.mdp]:
-  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
-  removed in a future release when all interaction forms are supported for
-  the verlet scheme. The verlet scheme already scales better, and it is
-  compatible with GPUs and other accelerators.
-
-
-NOTE 2 [file NVT_e.mdp]:
-  The Berendsen thermostat does not generate the correct kinetic energy
-  distribution. You might want to consider using the V-rescale thermostat.
-
-Setting the LD random seed to 1933720915
-Generated 168 of the 1653 non-bonded parameter combinations
-Excluding 1 bonded neighbours molecule type 'AR'
-Velocities were taken from a Maxwell distribution at 179.8 K
-Number of degrees of freedom in T-Coupling group System is 2997.00
-
-WARNING 1 [file NVT_e.mdp]:
-  You are using full electrostatics treatment PME-User for a system without
-  charges.
-  This costs a lot of performance for just processing zeros, consider using
-  Cut-off instead.
-
-
-Estimate for the relative computational load of the PME mesh part: 0.51
-
-NOTE 3 [file NVT_e.mdp]:
-  The optimal PME mesh load for parallel simulations is below 0.5
-  and for highly parallel simulations between 0.25 and 0.33,
-  for higher performance, increase the cut-off and the PME grid spacing.
-
-
-
-There were 3 notes
-
-There was 1 warning
-
-GROMACS reminds you: "A curious aspect of the theory of evolution is that everybody thinks he understands it." (Jacques Monod)
-
-                        :-) GROMACS - mdrun, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      mdrun, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  mdrun -s NVT_e.tpr -deffnm NVT_e -table Table_HS_modif.xvg
-
-
-Running on 1 node with total 16 cores, 32 logical cores
-Hardware detected on host r10i2n1 (the node of MPI rank 0):
-  CPU info:
-    Vendor: Intel
-    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    SIMD instructions most likely to fit this hardware: AVX_256
-    SIMD instructions selected at GROMACS compile time: AVX_256
-
-  Hardware topology: Basic
-
-
-The current CPU can measure timings more accurately than the code in
-mdrun was configured to use. This might affect your simulation
-speed as accurate timings are needed for load-balancing.
-Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
-
-Reading file NVT_e.tpr, VERSION 2016.1 (single precision)
-The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
-Using 16 MPI processes
-
-
-NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
-removed in a future release when 'verlet' supports all interaction forms.
-
-
-Non-default thread affinity set probably by the OpenMP library,
-disabling internal thread affinity
-starting mdrun 'Liquid Argon'
-9000000 steps,  18000.0 ps.
-
-Writing final coordinates.
-
- Average load imbalance: 10.2 %
- Part of the total run time spent waiting due to load imbalance: 1.2 %
-
-
-               Core t (s)   Wall t (s)        (%)
-       Time:    23668.819     1479.301     1600.0
-                 (ns/day)    (hour/ns)
-Performance:     1051.307        0.023
-
-GROMACS reminds you: "Weaseling out of things is important to learn. It's what separates us from the animals... except the weasels." (Homer Simpson)
-
-                      :-) GROMACS - gmx grompp, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx grompp, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx grompp -f NPT.mdp -c NVT_e.gro -p topol.top -o NPT.tpr -maxwarn 3 -t NVT_e.cpt
-
-Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
-
-Back Off! I just backed up mdout.mdp to ./#mdout.mdp.3#
-
-NOTE 1 [file NPT.mdp]:
-  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
-  removed in a future release when all interaction forms are supported for
-  the verlet scheme. The verlet scheme already scales better, and it is
-  compatible with GPUs and other accelerators.
-
-Setting the LD random seed to -1400978141
-Generated 168 of the 1653 non-bonded parameter combinations
-Excluding 1 bonded neighbours molecule type 'AR'
-Number of degrees of freedom in T-Coupling group System is 2997.00
-
-WARNING 1 [file NPT.mdp]:
-  You are using full electrostatics treatment PME-User for a system without
-  charges.
-  This costs a lot of performance for just processing zeros, consider using
-  Cut-off instead.
-
-
-Reading Coordinates, Velocities and Box size from old trajectory
-Will read whole trajectory
-Last frame         -1 time 18000.000   
-Using frame at t = 18000 ps
-Starting time for run is 0 ps
-Estimate for the relative computational load of the PME mesh part: 0.51
-
-NOTE 2 [file NPT.mdp]:
-  The optimal PME mesh load for parallel simulations is below 0.5
-  and for highly parallel simulations between 0.25 and 0.33,
-  for higher performance, increase the cut-off and the PME grid spacing.
-
-
-
-There were 2 notes
-
-There was 1 warning
-
-GROMACS reminds you: "You Will Be Surprised At What Resides In Your Inside" (Arrested Development)
-
-                        :-) GROMACS - mdrun, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      mdrun, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  mdrun -s NPT.tpr -deffnm NPT -table Table_HS_modif.xvg
-
-
-Running on 1 node with total 16 cores, 32 logical cores
-Hardware detected on host r10i2n1 (the node of MPI rank 0):
-  CPU info:
-    Vendor: Intel
-    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    SIMD instructions most likely to fit this hardware: AVX_256
-    SIMD instructions selected at GROMACS compile time: AVX_256
-
-  Hardware topology: Basic
-
-
-The current CPU can measure timings more accurately than the code in
-mdrun was configured to use. This might affect your simulation
-speed as accurate timings are needed for load-balancing.
-Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
-
-Reading file NPT.tpr, VERSION 2016.1 (single precision)
-The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
-Using 16 MPI processes
-
-
-NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
-removed in a future release when 'verlet' supports all interaction forms.
-
-
-Non-default thread affinity set probably by the OpenMP library,
-disabling internal thread affinity
-starting mdrun 'Liquid Argon'
-30000000 steps,  60000.0 ps.
-
-Writing final coordinates.
-
- Average load imbalance: 6.6 %
- Part of the total run time spent waiting due to load imbalance: 1.0 %
-
-
-               Core t (s)   Wall t (s)        (%)
-       Time:    91597.800     5724.863     1600.0
-                         1h35:24
-                 (ns/day)    (hour/ns)
-Performance:      905.524        0.027
-
-GROMACS reminds you: "I Used To Care, But Things Have Changed" (Bob Dylan)
-
-                      :-) GROMACS - gmx grompp, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx grompp, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx grompp -f NVT.mdp -c NPT.gro -p topol.top -o NVT.tpr -maxwarn 3 -t NPT.cpt
-
-Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
-
-Back Off! I just backed up mdout.mdp to ./#mdout.mdp.4#
-
-NOTE 1 [file NVT.mdp]:
-  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
-  removed in a future release when all interaction forms are supported for
-  the verlet scheme. The verlet scheme already scales better, and it is
-  compatible with GPUs and other accelerators.
-
-
-NOTE 2 [file NVT.mdp]:
-  The Berendsen thermostat does not generate the correct kinetic energy
-  distribution. You might want to consider using the V-rescale thermostat.
-
-Setting the LD random seed to 1796169958
-Generated 168 of the 1653 non-bonded parameter combinations
-Excluding 1 bonded neighbours molecule type 'AR'
-Number of degrees of freedom in T-Coupling group System is 2997.00
-
-WARNING 1 [file NVT.mdp]:
-  You are using full electrostatics treatment PME-User for a system without
-  charges.
-  This costs a lot of performance for just processing zeros, consider using
-  Cut-off instead.
-
-
-Reading Coordinates, Velocities and Box size from old trajectory
-Will read whole trajectory
-Last frame         -1 time 60000.000   
-Using frame at t = 60000 ps
-Starting time for run is 0 ps
-Estimate for the relative computational load of the PME mesh part: 0.25
-
-NOTE 3 [file NVT.mdp]:
-  This run will generate roughly 9156 Mb of data
-
-
-There were 3 notes
-
-There was 1 warning
-
-GROMACS reminds you: "Let's Unzip And Let's Unfold" (Red Hot Chili Peppers)
-
-                        :-) GROMACS - mdrun, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      mdrun, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  mdrun -s NVT.tpr -deffnm NVT -table Table_HS_modif.xvg
-
-
-Running on 1 node with total 16 cores, 32 logical cores
-Hardware detected on host r10i2n1 (the node of MPI rank 0):
-  CPU info:
-    Vendor: Intel
-    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    SIMD instructions most likely to fit this hardware: AVX_256
-    SIMD instructions selected at GROMACS compile time: AVX_256
-
-  Hardware topology: Basic
-
-
-The current CPU can measure timings more accurately than the code in
-mdrun was configured to use. This might affect your simulation
-speed as accurate timings are needed for load-balancing.
-Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
-
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
-Using 16 MPI processes
-
-
-NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
-removed in a future release when 'verlet' supports all interaction forms.
-
-
-Non-default thread affinity set probably by the OpenMP library,
-disabling internal thread affinity
-
-WARNING: This run will generate roughly 9156 Mb of data
-
-starting mdrun 'Liquid Argon'
-4000000 steps,   8000.0 ps.
-
-Writing final coordinates.
-
- Average load imbalance: 6.3 %
- Part of the total run time spent waiting due to load imbalance: 0.8 %
-
-
-NOTE: 16 % of the run time was spent communicating energies,
-      you might want to use the -gcom option of mdrun
-
-
-               Core t (s)   Wall t (s)        (%)
-       Time:    15230.849      951.928     1600.0
-                 (ns/day)    (hour/ns)
-Performance:      726.105        0.033
-
-GROMACS reminds you: "Kick the Dog and You Will Die" (Magnapop)
-
-                       :-) GROMACS - gmx tcaf, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx tcaf, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 1000 -ov MM_1000.xvg
-
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Group     0 (         System) has  1000 elements
-Group     1 (          Other) has  1000 elements
-Group     2 (             AR) has  1000 elements
-Select a group: trr version: GMX_trn_file (single precision)
-Skipping frame      0 time    0.000   Skipping frame      1 time    0.020   Skipping frame      2 time    0.040   Skipping frame      3 time    0.060   Skipping frame      4 time    0.080   Skipping frame      5 time    0.100   Skipping frame      6 time    0.120   Skipping frame      7 time    0.140   Skipping frame      8 time    0.160   Skipping frame      9 time    0.180   Skipping frame     10 time    0.200   Skipping frame     11 time    0.220   Skipping frame     12 time    0.240   Skipping frame     13 time    0.260   Skipping frame     14 time    0.280   Skipping frame     15 time    0.300   Skipping frame     16 time    0.320   Skipping frame     17 time    0.340   Skipping frame     18 time    0.360   Skipping frame     19 time    0.380   Skipping frame     20 time    0.400   Skipping frame     30 time    0.600   Skipping frame     40 time    0.800   Skipping frame     50 time    1.000   Skipping frame     60 time    1.200   Skipping frame     70 time    1.400   Skipping frame     80 time    1.600   Skipping frame     90 time    1.800   Skipping frame    100 time    2.000   Skipping frame    110 time    2.200   Skipping frame    120 time    2.400   Skipping frame    130 time    2.600   Skipping frame    140 time    2.800   Skipping frame    150 time    3.000   Skipping frame    160 time    3.200   Skipping frame    170 time    3.400   Skipping frame    180 time    3.600   Skipping frame    190 time    3.800   Skipping frame    200 time    4.000   Skipping frame    300 time    6.000   Skipping frame    400 time    8.000   Skipping frame    500 time   10.000   Skipping frame    600 time   12.000   Skipping frame    700 time   14.000   Skipping frame    800 time   16.000   Skipping frame    900 time   18.000   Skipping frame   1000 time   20.000   Skipping frame   1100 time   22.000   Skipping frame   1200 time   24.000   Skipping frame   1300 time   26.000   Skipping frame   1400 time   28.000   Skipping frame   1500 time   30.000   Skipping frame   1600 time   32.000   Skipping frame   1700 time   34.000   Skipping frame   1800 time   36.000   Skipping frame   1900 time   38.000   Skipping frame   2000 time   40.000   Skipping frame   3000 time   60.000   Skipping frame   4000 time   80.000   Skipping frame   5000 time  100.000   Skipping frame   6000 time  120.000   Skipping frame   7000 time  140.000   Skipping frame   8000 time  160.000   Skipping frame   9000 time  180.000   Skipping frame  10000 time  200.000   Skipping frame  11000 time  220.000   Skipping frame  12000 time  240.000   Skipping frame  13000 time  260.000   Skipping frame  14000 time  280.000   Skipping frame  15000 time  300.000   Skipping frame  16000 time  320.000   Skipping frame  17000 time  340.000   Skipping frame  18000 time  360.000   Skipping frame  19000 time  380.000   Skipping frame  20000 time  400.000   Skipping frame  21000 time  420.000   Skipping frame  22000 time  440.000   Skipping frame  23000 time  460.000   Skipping frame  24000 time  480.000   Skipping frame  25000 time  500.000   Skipping frame  26000 time  520.000   Skipping frame  27000 time  540.000   Skipping frame  28000 time  560.000   Skipping frame  29000 time  580.000   Skipping frame  30000 time  600.000   Skipping frame  31000 time  620.000   Skipping frame  32000 time  640.000   Skipping frame  33000 time  660.000   Skipping frame  34000 time  680.000   Skipping frame  35000 time  700.000   Skipping frame  36000 time  720.000   Skipping frame  37000 time  740.000   Skipping frame  38000 time  760.000   Skipping frame  39000 time  780.000   Skipping frame  40000 time  800.000   Skipping frame  41000 time  820.000   Skipping frame  42000 time  840.000   Skipping frame  43000 time  860.000   Skipping frame  44000 time  880.000   Skipping frame  45000 time  900.000   Skipping frame  46000 time  920.000   Skipping frame  47000 time  940.000   Skipping frame  48000 time  960.000   Skipping frame  49000 time  980.000   Reading frame   50000 time 1000.000   Reading frame   51000 time 1020.000   Reading frame   52000 time 1040.000   Reading frame   53000 time 1060.000   Reading frame   54000 time 1080.000   Reading frame   55000 time 1100.000   Reading frame   56000 time 1120.000   Reading frame   57000 time 1140.000   Reading frame   58000 time 1160.000   Reading frame   59000 time 1180.000   Reading frame   60000 time 1200.000   Reading frame   61000 time 1220.000   Reading frame   62000 time 1240.000   Reading frame   63000 time 1260.000   Reading frame   64000 time 1280.000   Reading frame   65000 time 1300.000   Reading frame   66000 time 1320.000   Reading frame   67000 time 1340.000   Reading frame   68000 time 1360.000   Reading frame   69000 time 1380.000   Reading frame   70000 time 1400.000   Reading frame   71000 time 1420.000   Reading frame   72000 time 1440.000   Reading frame   73000 time 1460.000   Reading frame   74000 time 1480.000   Reading frame   75000 time 1500.000   Reading frame   76000 time 1520.000   Reading frame   77000 time 1540.000   Reading frame   78000 time 1560.000   Reading frame   79000 time 1580.000   Reading frame   80000 time 1600.000   Reading frame   81000 time 1620.000   Reading frame   82000 time 1640.000   Reading frame   83000 time 1660.000   Reading frame   84000 time 1680.000   Reading frame   85000 time 1700.000   Reading frame   86000 time 1720.000   Reading frame   87000 time 1740.000   Reading frame   88000 time 1760.000   Reading frame   89000 time 1780.000   Reading frame   90000 time 1800.000   Reading frame   91000 time 1820.000   Reading frame   92000 time 1840.000   Reading frame   93000 time 1860.000   Reading frame   94000 time 1880.000   Reading frame   95000 time 1900.000   Reading frame   96000 time 1920.000   Reading frame   97000 time 1940.000   Reading frame   98000 time 1960.000   Reading frame   99000 time 1980.000   Reading frame  100000 time 2000.000   Reading frame  101000 time 2020.000   Reading frame  102000 time 2040.000   Reading frame  103000 time 2060.000   Reading frame  104000 time 2080.000   Reading frame  105000 time 2100.000   Reading frame  106000 time 2120.000   Reading frame  107000 time 2140.000   Reading frame  108000 time 2160.000   Reading frame  109000 time 2180.000   Reading frame  110000 time 2200.000   Reading frame  111000 time 2220.000   Reading frame  112000 time 2240.000   Reading frame  113000 time 2260.000   Reading frame  114000 time 2280.000   Reading frame  115000 time 2300.000   Reading frame  116000 time 2320.000   Reading frame  117000 time 2340.000   Reading frame  118000 time 2360.000   Reading frame  119000 time 2380.000   Reading frame  120000 time 2400.000   Reading frame  121000 time 2420.000   Reading frame  122000 time 2440.000   Reading frame  123000 time 2460.000   Reading frame  124000 time 2480.000   Reading frame  125000 time 2500.000   Reading frame  126000 time 2520.000   Reading frame  127000 time 2540.000   Reading frame  128000 time 2560.000   Reading frame  129000 time 2580.000   Reading frame  130000 time 2600.000   Reading frame  131000 time 2620.000   Reading frame  132000 time 2640.000   Reading frame  133000 time 2660.000   Reading frame  134000 time 2680.000   Reading frame  135000 time 2700.000   Reading frame  136000 time 2720.000   Reading frame  137000 time 2740.000   Reading frame  138000 time 2760.000   Reading frame  139000 time 2780.000   Reading frame  140000 time 2800.000   Reading frame  141000 time 2820.000   Reading frame  142000 time 2840.000   Reading frame  143000 time 2860.000   Reading frame  144000 time 2880.000   Reading frame  145000 time 2900.000   Reading frame  146000 time 2920.000   Reading frame  147000 time 2940.000   Reading frame  148000 time 2960.000   Reading frame  149000 time 2980.000   Reading frame  150000 time 3000.000   Reading frame  151000 time 3020.000   Reading frame  152000 time 3040.000   Reading frame  153000 time 3060.000   Reading frame  154000 time 3080.000   Reading frame  155000 time 3100.000   Reading frame  156000 time 3120.000   Reading frame  157000 time 3140.000   Reading frame  158000 time 3160.000   Reading frame  159000 time 3180.000   Reading frame  160000 time 3200.000   Reading frame  161000 time 3220.000   Reading frame  162000 time 3240.000   Reading frame  163000 time 3260.000   Reading frame  164000 time 3280.000   Reading frame  165000 time 3300.000   Reading frame  166000 time 3320.000   Reading frame  167000 time 3340.000   Reading frame  168000 time 3360.000   Reading frame  169000 time 3380.000   Reading frame  170000 time 3400.000   Reading frame  171000 time 3420.000   Reading frame  172000 time 3440.000   Reading frame  173000 time 3460.000   Reading frame  174000 time 3480.000   Reading frame  175000 time 3500.000   Reading frame  176000 time 3520.000   Reading frame  177000 time 3540.000   Reading frame  178000 time 3560.000   Reading frame  179000 time 3580.000   Reading frame  180000 time 3600.000   Reading frame  181000 time 3620.000   Reading frame  182000 time 3640.000   Reading frame  183000 time 3660.000   Reading frame  184000 time 3680.000   Reading frame  185000 time 3700.000   Reading frame  186000 time 3720.000   Reading frame  187000 time 3740.000   Reading frame  188000 time 3760.000   Reading frame  189000 time 3780.000   Reading frame  190000 time 3800.000   Reading frame  191000 time 3820.000   Reading frame  192000 time 3840.000   Reading frame  193000 time 3860.000   Reading frame  194000 time 3880.000   Reading frame  195000 time 3900.000   Reading frame  196000 time 3920.000   Reading frame  197000 time 3940.000   Reading frame  198000 time 3960.000   Reading frame  199000 time 3980.000   Reading frame  200000 time 4000.000   Reading frame  201000 time 4020.000   Reading frame  202000 time 4040.000   Reading frame  203000 time 4060.000   Reading frame  204000 time 4080.000   Reading frame  205000 time 4100.000   Reading frame  206000 time 4120.000   Reading frame  207000 time 4140.000   Reading frame  208000 time 4160.000   Reading frame  209000 time 4180.000   Reading frame  210000 time 4200.000   Reading frame  211000 time 4220.000   Reading frame  212000 time 4240.000   Reading frame  213000 time 4260.000   Reading frame  214000 time 4280.000   Reading frame  215000 time 4300.000   Reading frame  216000 time 4320.000   Reading frame  217000 time 4340.000   Reading frame  218000 time 4360.000   Reading frame  219000 time 4380.000   Reading frame  220000 time 4400.000   Reading frame  221000 time 4420.000   Reading frame  222000 time 4440.000   Reading frame  223000 time 4460.000   Reading frame  224000 time 4480.000   Reading frame  225000 time 4500.000   Reading frame  226000 time 4520.000   Reading frame  227000 time 4540.000   Reading frame  228000 time 4560.000   Reading frame  229000 time 4580.000   Reading frame  230000 time 4600.000   Reading frame  231000 time 4620.000   Reading frame  232000 time 4640.000   Reading frame  233000 time 4660.000   Reading frame  234000 time 4680.000   Reading frame  235000 time 4700.000   Reading frame  236000 time 4720.000   Reading frame  237000 time 4740.000   Reading frame  238000 time 4760.000   Reading frame  239000 time 4780.000   Reading frame  240000 time 4800.000   Reading frame  241000 time 4820.000   Reading frame  242000 time 4840.000   Reading frame  243000 time 4860.000   Reading frame  244000 time 4880.000   Reading frame  245000 time 4900.000   Reading frame  246000 time 4920.000   Reading frame  247000 time 4940.000   Reading frame  248000 time 4960.000   Reading frame  249000 time 4980.000   Reading frame  250000 time 5000.000   Reading frame  251000 time 5020.000   Reading frame  252000 time 5040.000   Reading frame  253000 time 5060.000   Reading frame  254000 time 5080.000   Reading frame  255000 time 5100.000   Reading frame  256000 time 5120.000   Reading frame  257000 time 5140.000   Reading frame  258000 time 5160.000   Reading frame  259000 time 5180.000   Reading frame  260000 time 5200.000   Reading frame  261000 time 5220.000   Reading frame  262000 time 5240.000   Reading frame  263000 time 5260.000   Reading frame  264000 time 5280.000   Reading frame  265000 time 5300.000   Reading frame  266000 time 5320.000   Reading frame  267000 time 5340.000   Reading frame  268000 time 5360.000   Reading frame  269000 time 5380.000   Reading frame  270000 time 5400.000   Reading frame  271000 time 5420.000   Reading frame  272000 time 5440.000   Reading frame  273000 time 5460.000   Reading frame  274000 time 5480.000   Reading frame  275000 time 5500.000   Reading frame  276000 time 5520.000   Reading frame  277000 time 5540.000   Reading frame  278000 time 5560.000   Reading frame  279000 time 5580.000   Reading frame  280000 time 5600.000   Reading frame  281000 time 5620.000   Reading frame  282000 time 5640.000   Reading frame  283000 time 5660.000   Reading frame  284000 time 5680.000   Reading frame  285000 time 5700.000   Reading frame  286000 time 5720.000   Reading frame  287000 time 5740.000   Reading frame  288000 time 5760.000   Reading frame  289000 time 5780.000   Reading frame  290000 time 5800.000   Reading frame  291000 time 5820.000   Reading frame  292000 time 5840.000   Reading frame  293000 time 5860.000   Reading frame  294000 time 5880.000   Reading frame  295000 time 5900.000   Reading frame  296000 time 5920.000   Reading frame  297000 time 5940.000   Reading frame  298000 time 5960.000   Reading frame  299000 time 5980.000   Reading frame  300000 time 6000.000   Reading frame  301000 time 6020.000   Reading frame  302000 time 6040.000   Reading frame  303000 time 6060.000   Reading frame  304000 time 6080.000   Reading frame  305000 time 6100.000   Reading frame  306000 time 6120.000   Reading frame  307000 time 6140.000   Reading frame  308000 time 6160.000   Reading frame  309000 time 6180.000   Reading frame  310000 time 6200.000   Reading frame  311000 time 6220.000   Reading frame  312000 time 6240.000   Reading frame  313000 time 6260.000   Reading frame  314000 time 6280.000   Reading frame  315000 time 6300.000   Reading frame  316000 time 6320.000   Reading frame  317000 time 6340.000   Reading frame  318000 time 6360.000   Reading frame  319000 time 6380.000   Reading frame  320000 time 6400.000   Reading frame  321000 time 6420.000   Reading frame  322000 time 6440.000   Reading frame  323000 time 6460.000   Reading frame  324000 time 6480.000   Reading frame  325000 time 6500.000   Reading frame  326000 time 6520.000   Reading frame  327000 time 6540.000   Reading frame  328000 time 6560.000   Reading frame  329000 time 6580.000   Reading frame  330000 time 6600.000   Reading frame  331000 time 6620.000   Reading frame  332000 time 6640.000   Reading frame  333000 time 6660.000   Reading frame  334000 time 6680.000   Reading frame  335000 time 6700.000   Reading frame  336000 time 6720.000   Reading frame  337000 time 6740.000   Reading frame  338000 time 6760.000   Reading frame  339000 time 6780.000   Reading frame  340000 time 6800.000   Reading frame  341000 time 6820.000   Reading frame  342000 time 6840.000   Reading frame  343000 time 6860.000   Reading frame  344000 time 6880.000   Reading frame  345000 time 6900.000   Reading frame  346000 time 6920.000   Reading frame  347000 time 6940.000   Reading frame  348000 time 6960.000   Reading frame  349000 time 6980.000   Reading frame  350000 time 7000.000   Reading frame  351000 time 7020.000   Reading frame  352000 time 7040.000   Reading frame  353000 time 7060.000   Reading frame  354000 time 7080.000   Reading frame  355000 time 7100.000   Reading frame  356000 time 7120.000   Reading frame  357000 time 7140.000   Reading frame  358000 time 7160.000   Reading frame  359000 time 7180.000   Reading frame  360000 time 7200.000   Reading frame  361000 time 7220.000   Reading frame  362000 time 7240.000   Reading frame  363000 time 7260.000   Reading frame  364000 time 7280.000   Reading frame  365000 time 7300.000   Reading frame  366000 time 7320.000   Reading frame  367000 time 7340.000   Reading frame  368000 time 7360.000   Reading frame  369000 time 7380.000   Reading frame  370000 time 7400.000   Reading frame  371000 time 7420.000   Reading frame  372000 time 7440.000   Reading frame  373000 time 7460.000   Reading frame  374000 time 7480.000   Reading frame  375000 time 7500.000   Reading frame  376000 time 7520.000   Reading frame  377000 time 7540.000   Reading frame  378000 time 7560.000   Reading frame  379000 time 7580.000   Reading frame  380000 time 7600.000   Reading frame  381000 time 7620.000   Reading frame  382000 time 7640.000   Reading frame  383000 time 7660.000   Reading frame  384000 time 7680.000   Reading frame  385000 time 7700.000   Reading frame  386000 time 7720.000   Reading frame  387000 time 7740.000   Reading frame  388000 time 7760.000   Reading frame  389000 time 7780.000   Reading frame  390000 time 7800.000   Reading frame  391000 time 7820.000   Reading frame  392000 time 7840.000   Reading frame  393000 time 7860.000   Reading frame  394000 time 7880.000   Reading frame  395000 time 7900.000   Reading frame  396000 time 7920.000   Reading frame  397000 time 7940.000   Reading frame  398000 time 7960.000   Reading frame  399000 time 7980.000   Reading frame  400000 time 8000.000   Last frame     400000 time 8000.000   
-WARNING: Incomplete header: nr 400001 time 8000
-
-GROMACS reminds you: "Don't Grumble, Give a Whistle !" (Monty Python)
-
-                       :-) GROMACS - gmx tcaf, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx tcaf, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 2000 -ov MM_2000.xvg
-
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Group     0 (         System) has  1000 elements
-Group     1 (          Other) has  1000 elements
-Group     2 (             AR) has  1000 elements
-Select a group: trr version: GMX_trn_file (single precision)
-Skipping frame      0 time    0.000   Skipping frame      1 time    0.020   Skipping frame      2 time    0.040   Skipping frame      3 time    0.060   Skipping frame      4 time    0.080   Skipping frame      5 time    0.100   Skipping frame      6 time    0.120   Skipping frame      7 time    0.140   Skipping frame      8 time    0.160   Skipping frame      9 time    0.180   Skipping frame     10 time    0.200   Skipping frame     11 time    0.220   Skipping frame     12 time    0.240   Skipping frame     13 time    0.260   Skipping frame     14 time    0.280   Skipping frame     15 time    0.300   Skipping frame     16 time    0.320   Skipping frame     17 time    0.340   Skipping frame     18 time    0.360   Skipping frame     19 time    0.380   Skipping frame     20 time    0.400   Skipping frame     30 time    0.600   Skipping frame     40 time    0.800   Skipping frame     50 time    1.000   Skipping frame     60 time    1.200   Skipping frame     70 time    1.400   Skipping frame     80 time    1.600   Skipping frame     90 time    1.800   Skipping frame    100 time    2.000   Skipping frame    110 time    2.200   Skipping frame    120 time    2.400   Skipping frame    130 time    2.600   Skipping frame    140 time    2.800   Skipping frame    150 time    3.000   Skipping frame    160 time    3.200   Skipping frame    170 time    3.400   Skipping frame    180 time    3.600   Skipping frame    190 time    3.800   Skipping frame    200 time    4.000   Skipping frame    300 time    6.000   Skipping frame    400 time    8.000   Skipping frame    500 time   10.000   Skipping frame    600 time   12.000   Skipping frame    700 time   14.000   Skipping frame    800 time   16.000   Skipping frame    900 time   18.000   Skipping frame   1000 time   20.000   Skipping frame   1100 time   22.000   Skipping frame   1200 time   24.000   Skipping frame   1300 time   26.000   Skipping frame   1400 time   28.000   Skipping frame   1500 time   30.000   Skipping frame   1600 time   32.000   Skipping frame   1700 time   34.000   Skipping frame   1800 time   36.000   Skipping frame   1900 time   38.000   Skipping frame   2000 time   40.000   Skipping frame   3000 time   60.000   Skipping frame   4000 time   80.000   Skipping frame   5000 time  100.000   Skipping frame   6000 time  120.000   Skipping frame   7000 time  140.000   Skipping frame   8000 time  160.000   Skipping frame   9000 time  180.000   Skipping frame  10000 time  200.000   Skipping frame  11000 time  220.000   Skipping frame  12000 time  240.000   Skipping frame  13000 time  260.000   Skipping frame  14000 time  280.000   Skipping frame  15000 time  300.000   Skipping frame  16000 time  320.000   Skipping frame  17000 time  340.000   Skipping frame  18000 time  360.000   Skipping frame  19000 time  380.000   Skipping frame  20000 time  400.000   Skipping frame  21000 time  420.000   Skipping frame  22000 time  440.000   Skipping frame  23000 time  460.000   Skipping frame  24000 time  480.000   Skipping frame  25000 time  500.000   Skipping frame  26000 time  520.000   Skipping frame  27000 time  540.000   Skipping frame  28000 time  560.000   Skipping frame  29000 time  580.000   Skipping frame  30000 time  600.000   Skipping frame  31000 time  620.000   Skipping frame  32000 time  640.000   Skipping frame  33000 time  660.000   Skipping frame  34000 time  680.000   Skipping frame  35000 time  700.000   Skipping frame  36000 time  720.000   Skipping frame  37000 time  740.000   Skipping frame  38000 time  760.000   Skipping frame  39000 time  780.000   Skipping frame  40000 time  800.000   Skipping frame  41000 time  820.000   Skipping frame  42000 time  840.000   Skipping frame  43000 time  860.000   Skipping frame  44000 time  880.000   Skipping frame  45000 time  900.000   Skipping frame  46000 time  920.000   Skipping frame  47000 time  940.000   Skipping frame  48000 time  960.000   Skipping frame  49000 time  980.000   Skipping frame  50000 time 1000.000   Skipping frame  51000 time 1020.000   Skipping frame  52000 time 1040.000   Skipping frame  53000 time 1060.000   Skipping frame  54000 time 1080.000   Skipping frame  55000 time 1100.000   Skipping frame  56000 time 1120.000   Skipping frame  57000 time 1140.000   Skipping frame  58000 time 1160.000   Skipping frame  59000 time 1180.000   Skipping frame  60000 time 1200.000   Skipping frame  61000 time 1220.000   Skipping frame  62000 time 1240.000   Skipping frame  63000 time 1260.000   Skipping frame  64000 time 1280.000   Skipping frame  65000 time 1300.000   Skipping frame  66000 time 1320.000   Skipping frame  67000 time 1340.000   Skipping frame  68000 time 1360.000   Skipping frame  69000 time 1380.000   Skipping frame  70000 time 1400.000   Skipping frame  71000 time 1420.000   Skipping frame  72000 time 1440.000   Skipping frame  73000 time 1460.000   Skipping frame  74000 time 1480.000   Skipping frame  75000 time 1500.000   Skipping frame  76000 time 1520.000   Skipping frame  77000 time 1540.000   Skipping frame  78000 time 1560.000   Skipping frame  79000 time 1580.000   Skipping frame  80000 time 1600.000   Skipping frame  81000 time 1620.000   Skipping frame  82000 time 1640.000   Skipping frame  83000 time 1660.000   Skipping frame  84000 time 1680.000   Skipping frame  85000 time 1700.000   Skipping frame  86000 time 1720.000   Skipping frame  87000 time 1740.000   Skipping frame  88000 time 1760.000   Skipping frame  89000 time 1780.000   Skipping frame  90000 time 1800.000   Skipping frame  91000 time 1820.000   Skipping frame  92000 time 1840.000   Skipping frame  93000 time 1860.000   Skipping frame  94000 time 1880.000   Skipping frame  95000 time 1900.000   Skipping frame  96000 time 1920.000   Skipping frame  97000 time 1940.000   Skipping frame  98000 time 1960.000   Skipping frame  99000 time 1980.000   Reading frame  100000 time 2000.000   Reading frame  101000 time 2020.000   Reading frame  102000 time 2040.000   Reading frame  103000 time 2060.000   Reading frame  104000 time 2080.000   Reading frame  105000 time 2100.000   Reading frame  106000 time 2120.000   Reading frame  107000 time 2140.000   Reading frame  108000 time 2160.000   Reading frame  109000 time 2180.000   Reading frame  110000 time 2200.000   Reading frame  111000 time 2220.000   Reading frame  112000 time 2240.000   Reading frame  113000 time 2260.000   Reading frame  114000 time 2280.000   Reading frame  115000 time 2300.000   Reading frame  116000 time 2320.000   Reading frame  117000 time 2340.000   Reading frame  118000 time 2360.000   Reading frame  119000 time 2380.000   Reading frame  120000 time 2400.000   Reading frame  121000 time 2420.000   Reading frame  122000 time 2440.000   Reading frame  123000 time 2460.000   Reading frame  124000 time 2480.000   Reading frame  125000 time 2500.000   Reading frame  126000 time 2520.000   Reading frame  127000 time 2540.000   Reading frame  128000 time 2560.000   Reading frame  129000 time 2580.000   Reading frame  130000 time 2600.000   Reading frame  131000 time 2620.000   Reading frame  132000 time 2640.000   Reading frame  133000 time 2660.000   Reading frame  134000 time 2680.000   Reading frame  135000 time 2700.000   Reading frame  136000 time 2720.000   Reading frame  137000 time 2740.000   Reading frame  138000 time 2760.000   Reading frame  139000 time 2780.000   Reading frame  140000 time 2800.000   Reading frame  141000 time 2820.000   Reading frame  142000 time 2840.000   Reading frame  143000 time 2860.000   Reading frame  144000 time 2880.000   Reading frame  145000 time 2900.000   Reading frame  146000 time 2920.000   Reading frame  147000 time 2940.000   Reading frame  148000 time 2960.000   Reading frame  149000 time 2980.000   Reading frame  150000 time 3000.000   Reading frame  151000 time 3020.000   Reading frame  152000 time 3040.000   Reading frame  153000 time 3060.000   Reading frame  154000 time 3080.000   Reading frame  155000 time 3100.000   Reading frame  156000 time 3120.000   Reading frame  157000 time 3140.000   Reading frame  158000 time 3160.000   Reading frame  159000 time 3180.000   Reading frame  160000 time 3200.000   Reading frame  161000 time 3220.000   Reading frame  162000 time 3240.000   Reading frame  163000 time 3260.000   Reading frame  164000 time 3280.000   Reading frame  165000 time 3300.000   Reading frame  166000 time 3320.000   Reading frame  167000 time 3340.000   Reading frame  168000 time 3360.000   Reading frame  169000 time 3380.000   Reading frame  170000 time 3400.000   Reading frame  171000 time 3420.000   Reading frame  172000 time 3440.000   Reading frame  173000 time 3460.000   Reading frame  174000 time 3480.000   Reading frame  175000 time 3500.000   Reading frame  176000 time 3520.000   Reading frame  177000 time 3540.000   Reading frame  178000 time 3560.000   Reading frame  179000 time 3580.000   Reading frame  180000 time 3600.000   Reading frame  181000 time 3620.000   Reading frame  182000 time 3640.000   Reading frame  183000 time 3660.000   Reading frame  184000 time 3680.000   Reading frame  185000 time 3700.000   Reading frame  186000 time 3720.000   Reading frame  187000 time 3740.000   Reading frame  188000 time 3760.000   Reading frame  189000 time 3780.000   Reading frame  190000 time 3800.000   Reading frame  191000 time 3820.000   Reading frame  192000 time 3840.000   Reading frame  193000 time 3860.000   Reading frame  194000 time 3880.000   Reading frame  195000 time 3900.000   Reading frame  196000 time 3920.000   Reading frame  197000 time 3940.000   Reading frame  198000 time 3960.000   Reading frame  199000 time 3980.000   Reading frame  200000 time 4000.000   Reading frame  201000 time 4020.000   Reading frame  202000 time 4040.000   Reading frame  203000 time 4060.000   Reading frame  204000 time 4080.000   Reading frame  205000 time 4100.000   Reading frame  206000 time 4120.000   Reading frame  207000 time 4140.000   Reading frame  208000 time 4160.000   Reading frame  209000 time 4180.000   Reading frame  210000 time 4200.000   Reading frame  211000 time 4220.000   Reading frame  212000 time 4240.000   Reading frame  213000 time 4260.000   Reading frame  214000 time 4280.000   Reading frame  215000 time 4300.000   Reading frame  216000 time 4320.000   Reading frame  217000 time 4340.000   Reading frame  218000 time 4360.000   Reading frame  219000 time 4380.000   Reading frame  220000 time 4400.000   Reading frame  221000 time 4420.000   Reading frame  222000 time 4440.000   Reading frame  223000 time 4460.000   Reading frame  224000 time 4480.000   Reading frame  225000 time 4500.000   Reading frame  226000 time 4520.000   Reading frame  227000 time 4540.000   Reading frame  228000 time 4560.000   Reading frame  229000 time 4580.000   Reading frame  230000 time 4600.000   Reading frame  231000 time 4620.000   Reading frame  232000 time 4640.000   Reading frame  233000 time 4660.000   Reading frame  234000 time 4680.000   Reading frame  235000 time 4700.000   Reading frame  236000 time 4720.000   Reading frame  237000 time 4740.000   Reading frame  238000 time 4760.000   Reading frame  239000 time 4780.000   Reading frame  240000 time 4800.000   Reading frame  241000 time 4820.000   Reading frame  242000 time 4840.000   Reading frame  243000 time 4860.000   Reading frame  244000 time 4880.000   Reading frame  245000 time 4900.000   Reading frame  246000 time 4920.000   Reading frame  247000 time 4940.000   Reading frame  248000 time 4960.000   Reading frame  249000 time 4980.000   Reading frame  250000 time 5000.000   Reading frame  251000 time 5020.000   Reading frame  252000 time 5040.000   Reading frame  253000 time 5060.000   Reading frame  254000 time 5080.000   Reading frame  255000 time 5100.000   Reading frame  256000 time 5120.000   Reading frame  257000 time 5140.000   Reading frame  258000 time 5160.000   Reading frame  259000 time 5180.000   Reading frame  260000 time 5200.000   Reading frame  261000 time 5220.000   Reading frame  262000 time 5240.000   Reading frame  263000 time 5260.000   Reading frame  264000 time 5280.000   Reading frame  265000 time 5300.000   Reading frame  266000 time 5320.000   Reading frame  267000 time 5340.000   Reading frame  268000 time 5360.000   Reading frame  269000 time 5380.000   Reading frame  270000 time 5400.000   Reading frame  271000 time 5420.000   Reading frame  272000 time 5440.000   Reading frame  273000 time 5460.000   Reading frame  274000 time 5480.000   Reading frame  275000 time 5500.000   Reading frame  276000 time 5520.000   Reading frame  277000 time 5540.000   Reading frame  278000 time 5560.000   Reading frame  279000 time 5580.000   Reading frame  280000 time 5600.000   Reading frame  281000 time 5620.000   Reading frame  282000 time 5640.000   Reading frame  283000 time 5660.000   Reading frame  284000 time 5680.000   Reading frame  285000 time 5700.000   Reading frame  286000 time 5720.000   Reading frame  287000 time 5740.000   Reading frame  288000 time 5760.000   Reading frame  289000 time 5780.000   Reading frame  290000 time 5800.000   Reading frame  291000 time 5820.000   Reading frame  292000 time 5840.000   Reading frame  293000 time 5860.000   Reading frame  294000 time 5880.000   Reading frame  295000 time 5900.000   Reading frame  296000 time 5920.000   Reading frame  297000 time 5940.000   Reading frame  298000 time 5960.000   Reading frame  299000 time 5980.000   Reading frame  300000 time 6000.000   Reading frame  301000 time 6020.000   Reading frame  302000 time 6040.000   Reading frame  303000 time 6060.000   Reading frame  304000 time 6080.000   Reading frame  305000 time 6100.000   Reading frame  306000 time 6120.000   Reading frame  307000 time 6140.000   Reading frame  308000 time 6160.000   Reading frame  309000 time 6180.000   Reading frame  310000 time 6200.000   Reading frame  311000 time 6220.000   Reading frame  312000 time 6240.000   Reading frame  313000 time 6260.000   Reading frame  314000 time 6280.000   Reading frame  315000 time 6300.000   Reading frame  316000 time 6320.000   Reading frame  317000 time 6340.000   Reading frame  318000 time 6360.000   Reading frame  319000 time 6380.000   Reading frame  320000 time 6400.000   Reading frame  321000 time 6420.000   Reading frame  322000 time 6440.000   Reading frame  323000 time 6460.000   Reading frame  324000 time 6480.000   Reading frame  325000 time 6500.000   Reading frame  326000 time 6520.000   Reading frame  327000 time 6540.000   Reading frame  328000 time 6560.000   Reading frame  329000 time 6580.000   Reading frame  330000 time 6600.000   Reading frame  331000 time 6620.000   Reading frame  332000 time 6640.000   Reading frame  333000 time 6660.000   Reading frame  334000 time 6680.000   Reading frame  335000 time 6700.000   Reading frame  336000 time 6720.000   Reading frame  337000 time 6740.000   Reading frame  338000 time 6760.000   Reading frame  339000 time 6780.000   Reading frame  340000 time 6800.000   Reading frame  341000 time 6820.000   Reading frame  342000 time 6840.000   Reading frame  343000 time 6860.000   Reading frame  344000 time 6880.000   Reading frame  345000 time 6900.000   Reading frame  346000 time 6920.000   Reading frame  347000 time 6940.000   Reading frame  348000 time 6960.000   Reading frame  349000 time 6980.000   Reading frame  350000 time 7000.000   Reading frame  351000 time 7020.000   Reading frame  352000 time 7040.000   Reading frame  353000 time 7060.000   Reading frame  354000 time 7080.000   Reading frame  355000 time 7100.000   Reading frame  356000 time 7120.000   Reading frame  357000 time 7140.000   Reading frame  358000 time 7160.000   Reading frame  359000 time 7180.000   Reading frame  360000 time 7200.000   Reading frame  361000 time 7220.000   Reading frame  362000 time 7240.000   Reading frame  363000 time 7260.000   Reading frame  364000 time 7280.000   Reading frame  365000 time 7300.000   Reading frame  366000 time 7320.000   Reading frame  367000 time 7340.000   Reading frame  368000 time 7360.000   Reading frame  369000 time 7380.000   Reading frame  370000 time 7400.000   Reading frame  371000 time 7420.000   Reading frame  372000 time 7440.000   Reading frame  373000 time 7460.000   Reading frame  374000 time 7480.000   Reading frame  375000 time 7500.000   Reading frame  376000 time 7520.000   Reading frame  377000 time 7540.000   Reading frame  378000 time 7560.000   Reading frame  379000 time 7580.000   Reading frame  380000 time 7600.000   Reading frame  381000 time 7620.000   Reading frame  382000 time 7640.000   Reading frame  383000 time 7660.000   Reading frame  384000 time 7680.000   Reading frame  385000 time 7700.000   Reading frame  386000 time 7720.000   Reading frame  387000 time 7740.000   Reading frame  388000 time 7760.000   Reading frame  389000 time 7780.000   Reading frame  390000 time 7800.000   Reading frame  391000 time 7820.000   Reading frame  392000 time 7840.000   Reading frame  393000 time 7860.000   Reading frame  394000 time 7880.000   Reading frame  395000 time 7900.000   Reading frame  396000 time 7920.000   Reading frame  397000 time 7940.000   Reading frame  398000 time 7960.000   Reading frame  399000 time 7980.000   Reading frame  400000 time 8000.000   Last frame     400000 time 8000.000   
-WARNING: Incomplete header: nr 400001 time 8000
-
-Back Off! I just backed up tcaf_all.xvg to ./#tcaf_all.xvg.1#
-
-Back Off! I just backed up tcaf.xvg to ./#tcaf.xvg.1#
-
-Back Off! I just backed up tcaf_fit.xvg to ./#tcaf_fit.xvg.1#
-
-GROMACS reminds you: "With a Lead Filled Snowshoe" (F. Zappa)
-
-                       :-) GROMACS - gmx tcaf, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx tcaf, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 3000 -ov MM_3000.xvg
-
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Group     0 (         System) has  1000 elements
-Group     1 (          Other) has  1000 elements
-Group     2 (             AR) has  1000 elements
-Select a group: trr version: GMX_trn_file (single precision)
-Skipping frame      0 time    0.000   Skipping frame      1 time    0.020   Skipping frame      2 time    0.040   Skipping frame      3 time    0.060   Skipping frame      4 time    0.080   Skipping frame      5 time    0.100   Skipping frame      6 time    0.120   Skipping frame      7 time    0.140   Skipping frame      8 time    0.160   Skipping frame      9 time    0.180   Skipping frame     10 time    0.200   Skipping frame     11 time    0.220   Skipping frame     12 time    0.240   Skipping frame     13 time    0.260   Skipping frame     14 time    0.280   Skipping frame     15 time    0.300   Skipping frame     16 time    0.320   Skipping frame     17 time    0.340   Skipping frame     18 time    0.360   Skipping frame     19 time    0.380   Skipping frame     20 time    0.400   Skipping frame     30 time    0.600   Skipping frame     40 time    0.800   Skipping frame     50 time    1.000   Skipping frame     60 time    1.200   Skipping frame     70 time    1.400   Skipping frame     80 time    1.600   Skipping frame     90 time    1.800   Skipping frame    100 time    2.000   Skipping frame    110 time    2.200   Skipping frame    120 time    2.400   Skipping frame    130 time    2.600   Skipping frame    140 time    2.800   Skipping frame    150 time    3.000   Skipping frame    160 time    3.200   Skipping frame    170 time    3.400   Skipping frame    180 time    3.600   Skipping frame    190 time    3.800   Skipping frame    200 time    4.000   Skipping frame    300 time    6.000   Skipping frame    400 time    8.000   Skipping frame    500 time   10.000   Skipping frame    600 time   12.000   Skipping frame    700 time   14.000   Skipping frame    800 time   16.000   Skipping frame    900 time   18.000   Skipping frame   1000 time   20.000   Skipping frame   1100 time   22.000   Skipping frame   1200 time   24.000   Skipping frame   1300 time   26.000   Skipping frame   1400 time   28.000   Skipping frame   1500 time   30.000   Skipping frame   1600 time   32.000   Skipping frame   1700 time   34.000   Skipping frame   1800 time   36.000   Skipping frame   1900 time   38.000   Skipping frame   2000 time   40.000   Skipping frame   3000 time   60.000   Skipping frame   4000 time   80.000   Skipping frame   5000 time  100.000   Skipping frame   6000 time  120.000   Skipping frame   7000 time  140.000   Skipping frame   8000 time  160.000   Skipping frame   9000 time  180.000   Skipping frame  10000 time  200.000   Skipping frame  11000 time  220.000   Skipping frame  12000 time  240.000   Skipping frame  13000 time  260.000   Skipping frame  14000 time  280.000   Skipping frame  15000 time  300.000   Skipping frame  16000 time  320.000   Skipping frame  17000 time  340.000   Skipping frame  18000 time  360.000   Skipping frame  19000 time  380.000   Skipping frame  20000 time  400.000   Skipping frame  21000 time  420.000   Skipping frame  22000 time  440.000   Skipping frame  23000 time  460.000   Skipping frame  24000 time  480.000   Skipping frame  25000 time  500.000   Skipping frame  26000 time  520.000   Skipping frame  27000 time  540.000   Skipping frame  28000 time  560.000   Skipping frame  29000 time  580.000   Skipping frame  30000 time  600.000   Skipping frame  31000 time  620.000   Skipping frame  32000 time  640.000   Skipping frame  33000 time  660.000   Skipping frame  34000 time  680.000   Skipping frame  35000 time  700.000   Skipping frame  36000 time  720.000   Skipping frame  37000 time  740.000   Skipping frame  38000 time  760.000   Skipping frame  39000 time  780.000   Skipping frame  40000 time  800.000   Skipping frame  41000 time  820.000   Skipping frame  42000 time  840.000   Skipping frame  43000 time  860.000   Skipping frame  44000 time  880.000   Skipping frame  45000 time  900.000   Skipping frame  46000 time  920.000   Skipping frame  47000 time  940.000   Skipping frame  48000 time  960.000   Skipping frame  49000 time  980.000   Skipping frame  50000 time 1000.000   Skipping frame  51000 time 1020.000   Skipping frame  52000 time 1040.000   Skipping frame  53000 time 1060.000   Skipping frame  54000 time 1080.000   Skipping frame  55000 time 1100.000   Skipping frame  56000 time 1120.000   Skipping frame  57000 time 1140.000   Skipping frame  58000 time 1160.000   Skipping frame  59000 time 1180.000   Skipping frame  60000 time 1200.000   Skipping frame  61000 time 1220.000   Skipping frame  62000 time 1240.000   Skipping frame  63000 time 1260.000   Skipping frame  64000 time 1280.000   Skipping frame  65000 time 1300.000   Skipping frame  66000 time 1320.000   Skipping frame  67000 time 1340.000   Skipping frame  68000 time 1360.000   Skipping frame  69000 time 1380.000   Skipping frame  70000 time 1400.000   Skipping frame  71000 time 1420.000   Skipping frame  72000 time 1440.000   Skipping frame  73000 time 1460.000   Skipping frame  74000 time 1480.000   Skipping frame  75000 time 1500.000   Skipping frame  76000 time 1520.000   Skipping frame  77000 time 1540.000   Skipping frame  78000 time 1560.000   Skipping frame  79000 time 1580.000   Skipping frame  80000 time 1600.000   Skipping frame  81000 time 1620.000   Skipping frame  82000 time 1640.000   Skipping frame  83000 time 1660.000   Skipping frame  84000 time 1680.000   Skipping frame  85000 time 1700.000   Skipping frame  86000 time 1720.000   Skipping frame  87000 time 1740.000   Skipping frame  88000 time 1760.000   Skipping frame  89000 time 1780.000   Skipping frame  90000 time 1800.000   Skipping frame  91000 time 1820.000   Skipping frame  92000 time 1840.000   Skipping frame  93000 time 1860.000   Skipping frame  94000 time 1880.000   Skipping frame  95000 time 1900.000   Skipping frame  96000 time 1920.000   Skipping frame  97000 time 1940.000   Skipping frame  98000 time 1960.000   Skipping frame  99000 time 1980.000   Skipping frame 100000 time 2000.000   Skipping frame 101000 time 2020.000   Skipping frame 102000 time 2040.000   Skipping frame 103000 time 2060.000   Skipping frame 104000 time 2080.000   Skipping frame 105000 time 2100.000   Skipping frame 106000 time 2120.000   Skipping frame 107000 time 2140.000   Skipping frame 108000 time 2160.000   Skipping frame 109000 time 2180.000   Skipping frame 110000 time 2200.000   Skipping frame 111000 time 2220.000   Skipping frame 112000 time 2240.000   Skipping frame 113000 time 2260.000   Skipping frame 114000 time 2280.000   Skipping frame 115000 time 2300.000   Skipping frame 116000 time 2320.000   Skipping frame 117000 time 2340.000   Skipping frame 118000 time 2360.000   Skipping frame 119000 time 2380.000   Skipping frame 120000 time 2400.000   Skipping frame 121000 time 2420.000   Skipping frame 122000 time 2440.000   Skipping frame 123000 time 2460.000   Skipping frame 124000 time 2480.000   Skipping frame 125000 time 2500.000   Skipping frame 126000 time 2520.000   Skipping frame 127000 time 2540.000   Skipping frame 128000 time 2560.000   Skipping frame 129000 time 2580.000   Skipping frame 130000 time 2600.000   Skipping frame 131000 time 2620.000   Skipping frame 132000 time 2640.000   Skipping frame 133000 time 2660.000   Skipping frame 134000 time 2680.000   Skipping frame 135000 time 2700.000   Skipping frame 136000 time 2720.000   Skipping frame 137000 time 2740.000   Skipping frame 138000 time 2760.000   Skipping frame 139000 time 2780.000   Skipping frame 140000 time 2800.000   Skipping frame 141000 time 2820.000   Skipping frame 142000 time 2840.000   Skipping frame 143000 time 2860.000   Skipping frame 144000 time 2880.000   Skipping frame 145000 time 2900.000   Skipping frame 146000 time 2920.000   Skipping frame 147000 time 2940.000   Skipping frame 148000 time 2960.000   Skipping frame 149000 time 2980.000   Reading frame  150000 time 3000.000   Reading frame  151000 time 3020.000   Reading frame  152000 time 3040.000   Reading frame  153000 time 3060.000   Reading frame  154000 time 3080.000   Reading frame  155000 time 3100.000   Reading frame  156000 time 3120.000   Reading frame  157000 time 3140.000   Reading frame  158000 time 3160.000   Reading frame  159000 time 3180.000   Reading frame  160000 time 3200.000   Reading frame  161000 time 3220.000   Reading frame  162000 time 3240.000   Reading frame  163000 time 3260.000   Reading frame  164000 time 3280.000   Reading frame  165000 time 3300.000   Reading frame  166000 time 3320.000   Reading frame  167000 time 3340.000   Reading frame  168000 time 3360.000   Reading frame  169000 time 3380.000   Reading frame  170000 time 3400.000   Reading frame  171000 time 3420.000   Reading frame  172000 time 3440.000   Reading frame  173000 time 3460.000   Reading frame  174000 time 3480.000   Reading frame  175000 time 3500.000   Reading frame  176000 time 3520.000   Reading frame  177000 time 3540.000   Reading frame  178000 time 3560.000   Reading frame  179000 time 3580.000   Reading frame  180000 time 3600.000   Reading frame  181000 time 3620.000   Reading frame  182000 time 3640.000   Reading frame  183000 time 3660.000   Reading frame  184000 time 3680.000   Reading frame  185000 time 3700.000   Reading frame  186000 time 3720.000   Reading frame  187000 time 3740.000   Reading frame  188000 time 3760.000   Reading frame  189000 time 3780.000   Reading frame  190000 time 3800.000   Reading frame  191000 time 3820.000   Reading frame  192000 time 3840.000   Reading frame  193000 time 3860.000   Reading frame  194000 time 3880.000   Reading frame  195000 time 3900.000   Reading frame  196000 time 3920.000   Reading frame  197000 time 3940.000   Reading frame  198000 time 3960.000   Reading frame  199000 time 3980.000   Reading frame  200000 time 4000.000   Reading frame  201000 time 4020.000   Reading frame  202000 time 4040.000   Reading frame  203000 time 4060.000   Reading frame  204000 time 4080.000   Reading frame  205000 time 4100.000   Reading frame  206000 time 4120.000   Reading frame  207000 time 4140.000   Reading frame  208000 time 4160.000   Reading frame  209000 time 4180.000   Reading frame  210000 time 4200.000   Reading frame  211000 time 4220.000   Reading frame  212000 time 4240.000   Reading frame  213000 time 4260.000   Reading frame  214000 time 4280.000   Reading frame  215000 time 4300.000   Reading frame  216000 time 4320.000   Reading frame  217000 time 4340.000   Reading frame  218000 time 4360.000   Reading frame  219000 time 4380.000   Reading frame  220000 time 4400.000   Reading frame  221000 time 4420.000   Reading frame  222000 time 4440.000   Reading frame  223000 time 4460.000   Reading frame  224000 time 4480.000   Reading frame  225000 time 4500.000   Reading frame  226000 time 4520.000   Reading frame  227000 time 4540.000   Reading frame  228000 time 4560.000   Reading frame  229000 time 4580.000   Reading frame  230000 time 4600.000   Reading frame  231000 time 4620.000   Reading frame  232000 time 4640.000   Reading frame  233000 time 4660.000   Reading frame  234000 time 4680.000   Reading frame  235000 time 4700.000   Reading frame  236000 time 4720.000   Reading frame  237000 time 4740.000   Reading frame  238000 time 4760.000   Reading frame  239000 time 4780.000   Reading frame  240000 time 4800.000   Reading frame  241000 time 4820.000   Reading frame  242000 time 4840.000   Reading frame  243000 time 4860.000   Reading frame  244000 time 4880.000   Reading frame  245000 time 4900.000   Reading frame  246000 time 4920.000   Reading frame  247000 time 4940.000   Reading frame  248000 time 4960.000   Reading frame  249000 time 4980.000   Reading frame  250000 time 5000.000   Reading frame  251000 time 5020.000   Reading frame  252000 time 5040.000   Reading frame  253000 time 5060.000   Reading frame  254000 time 5080.000   Reading frame  255000 time 5100.000   Reading frame  256000 time 5120.000   Reading frame  257000 time 5140.000   Reading frame  258000 time 5160.000   Reading frame  259000 time 5180.000   Reading frame  260000 time 5200.000   Reading frame  261000 time 5220.000   Reading frame  262000 time 5240.000   Reading frame  263000 time 5260.000   Reading frame  264000 time 5280.000   Reading frame  265000 time 5300.000   Reading frame  266000 time 5320.000   Reading frame  267000 time 5340.000   Reading frame  268000 time 5360.000   Reading frame  269000 time 5380.000   Reading frame  270000 time 5400.000   Reading frame  271000 time 5420.000   Reading frame  272000 time 5440.000   Reading frame  273000 time 5460.000   Reading frame  274000 time 5480.000   Reading frame  275000 time 5500.000   Reading frame  276000 time 5520.000   Reading frame  277000 time 5540.000   Reading frame  278000 time 5560.000   Reading frame  279000 time 5580.000   Reading frame  280000 time 5600.000   Reading frame  281000 time 5620.000   Reading frame  282000 time 5640.000   Reading frame  283000 time 5660.000   Reading frame  284000 time 5680.000   Reading frame  285000 time 5700.000   Reading frame  286000 time 5720.000   Reading frame  287000 time 5740.000   Reading frame  288000 time 5760.000   Reading frame  289000 time 5780.000   Reading frame  290000 time 5800.000   Reading frame  291000 time 5820.000   Reading frame  292000 time 5840.000   Reading frame  293000 time 5860.000   Reading frame  294000 time 5880.000   Reading frame  295000 time 5900.000   Reading frame  296000 time 5920.000   Reading frame  297000 time 5940.000   Reading frame  298000 time 5960.000   Reading frame  299000 time 5980.000   Reading frame  300000 time 6000.000   Reading frame  301000 time 6020.000   Reading frame  302000 time 6040.000   Reading frame  303000 time 6060.000   Reading frame  304000 time 6080.000   Reading frame  305000 time 6100.000   Reading frame  306000 time 6120.000   Reading frame  307000 time 6140.000   Reading frame  308000 time 6160.000   Reading frame  309000 time 6180.000   Reading frame  310000 time 6200.000   Reading frame  311000 time 6220.000   Reading frame  312000 time 6240.000   Reading frame  313000 time 6260.000   Reading frame  314000 time 6280.000   Reading frame  315000 time 6300.000   Reading frame  316000 time 6320.000   Reading frame  317000 time 6340.000   Reading frame  318000 time 6360.000   Reading frame  319000 time 6380.000   Reading frame  320000 time 6400.000   Reading frame  321000 time 6420.000   Reading frame  322000 time 6440.000   Reading frame  323000 time 6460.000   Reading frame  324000 time 6480.000   Reading frame  325000 time 6500.000   Reading frame  326000 time 6520.000   Reading frame  327000 time 6540.000   Reading frame  328000 time 6560.000   Reading frame  329000 time 6580.000   Reading frame  330000 time 6600.000   Reading frame  331000 time 6620.000   Reading frame  332000 time 6640.000   Reading frame  333000 time 6660.000   Reading frame  334000 time 6680.000   Reading frame  335000 time 6700.000   Reading frame  336000 time 6720.000   Reading frame  337000 time 6740.000   Reading frame  338000 time 6760.000   Reading frame  339000 time 6780.000   Reading frame  340000 time 6800.000   Reading frame  341000 time 6820.000   Reading frame  342000 time 6840.000   Reading frame  343000 time 6860.000   Reading frame  344000 time 6880.000   Reading frame  345000 time 6900.000   Reading frame  346000 time 6920.000   Reading frame  347000 time 6940.000   Reading frame  348000 time 6960.000   Reading frame  349000 time 6980.000   Reading frame  350000 time 7000.000   Reading frame  351000 time 7020.000   Reading frame  352000 time 7040.000   Reading frame  353000 time 7060.000   Reading frame  354000 time 7080.000   Reading frame  355000 time 7100.000   Reading frame  356000 time 7120.000   Reading frame  357000 time 7140.000   Reading frame  358000 time 7160.000   Reading frame  359000 time 7180.000   Reading frame  360000 time 7200.000   Reading frame  361000 time 7220.000   Reading frame  362000 time 7240.000   Reading frame  363000 time 7260.000   Reading frame  364000 time 7280.000   Reading frame  365000 time 7300.000   Reading frame  366000 time 7320.000   Reading frame  367000 time 7340.000   Reading frame  368000 time 7360.000   Reading frame  369000 time 7380.000   Reading frame  370000 time 7400.000   Reading frame  371000 time 7420.000   Reading frame  372000 time 7440.000   Reading frame  373000 time 7460.000   Reading frame  374000 time 7480.000   Reading frame  375000 time 7500.000   Reading frame  376000 time 7520.000   Reading frame  377000 time 7540.000   Reading frame  378000 time 7560.000   Reading frame  379000 time 7580.000   Reading frame  380000 time 7600.000   Reading frame  381000 time 7620.000   Reading frame  382000 time 7640.000   Reading frame  383000 time 7660.000   Reading frame  384000 time 7680.000   Reading frame  385000 time 7700.000   Reading frame  386000 time 7720.000   Reading frame  387000 time 7740.000   Reading frame  388000 time 7760.000   Reading frame  389000 time 7780.000   Reading frame  390000 time 7800.000   Reading frame  391000 time 7820.000   Reading frame  392000 time 7840.000   Reading frame  393000 time 7860.000   Reading frame  394000 time 7880.000   Reading frame  395000 time 7900.000   Reading frame  396000 time 7920.000   Reading frame  397000 time 7940.000   Reading frame  398000 time 7960.000   Reading frame  399000 time 7980.000   Reading frame  400000 time 8000.000   Last frame     400000 time 8000.000   
-WARNING: Incomplete header: nr 400001 time 8000
-
-Back Off! I just backed up tcaf_all.xvg to ./#tcaf_all.xvg.2#
-
-Back Off! I just backed up tcaf.xvg to ./#tcaf.xvg.2#
-
-Back Off! I just backed up tcaf_fit.xvg to ./#tcaf_fit.xvg.2#
-
-GROMACS reminds you: "No One Could Foresee the End That Came So Fast" (Slayer)
-
-                       :-) GROMACS - gmx tcaf, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx tcaf, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx tcaf -f NVT.trr -s NVT.tpr -normalize -b 4000 -ov MM_4000.xvg
-
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Reading file NVT.tpr, VERSION 2016.1 (single precision)
-Group     0 (         System) has  1000 elements
-Group     1 (          Other) has  1000 elements
-Group     2 (             AR) has  1000 elements
-Select a group: trr version: GMX_trn_file (single precision)
-Skipping frame      0 time    0.000   Skipping frame      1 time    0.020   Skipping frame      2 time    0.040   Skipping frame      3 time    0.060   Skipping frame      4 time    0.080   Skipping frame      5 time    0.100   Skipping frame      6 time    0.120   Skipping frame      7 time    0.140   Skipping frame      8 time    0.160   Skipping frame      9 time    0.180   Skipping frame     10 time    0.200   Skipping frame     11 time    0.220   Skipping frame     12 time    0.240   Skipping frame     13 time    0.260   Skipping frame     14 time    0.280   Skipping frame     15 time    0.300   Skipping frame     16 time    0.320   Skipping frame     17 time    0.340   Skipping frame     18 time    0.360   Skipping frame     19 time    0.380   Skipping frame     20 time    0.400   Skipping frame     30 time    0.600   Skipping frame     40 time    0.800   Skipping frame     50 time    1.000   Skipping frame     60 time    1.200   Skipping frame     70 time    1.400   Skipping frame     80 time    1.600   Skipping frame     90 time    1.800   Skipping frame    100 time    2.000   Skipping frame    110 time    2.200   Skipping frame    120 time    2.400   Skipping frame    130 time    2.600   Skipping frame    140 time    2.800   Skipping frame    150 time    3.000   Skipping frame    160 time    3.200   Skipping frame    170 time    3.400   Skipping frame    180 time    3.600   Skipping frame    190 time    3.800   Skipping frame    200 time    4.000   Skipping frame    300 time    6.000   Skipping frame    400 time    8.000   Skipping frame    500 time   10.000   Skipping frame    600 time   12.000   Skipping frame    700 time   14.000   Skipping frame    800 time   16.000   Skipping frame    900 time   18.000   Skipping frame   1000 time   20.000   Skipping frame   1100 time   22.000   Skipping frame   1200 time   24.000   Skipping frame   1300 time   26.000   Skipping frame   1400 time   28.000   Skipping frame   1500 time   30.000   Skipping frame   1600 time   32.000   Skipping frame   1700 time   34.000   Skipping frame   1800 time   36.000   Skipping frame   1900 time   38.000   Skipping frame   2000 time   40.000   Skipping frame   3000 time   60.000   Skipping frame   4000 time   80.000   Skipping frame   5000 time  100.000   Skipping frame   6000 time  120.000   Skipping frame   7000 time  140.000   Skipping frame   8000 time  160.000   Skipping frame   9000 time  180.000   Skipping frame  10000 time  200.000   Skipping frame  11000 time  220.000   Skipping frame  12000 time  240.000   Skipping frame  13000 time  260.000   Skipping frame  14000 time  280.000   Skipping frame  15000 time  300.000   Skipping frame  16000 time  320.000   Skipping frame  17000 time  340.000   Skipping frame  18000 time  360.000   Skipping frame  19000 time  380.000   Skipping frame  20000 time  400.000   Skipping frame  21000 time  420.000   Skipping frame  22000 time  440.000   Skipping frame  23000 time  460.000   Skipping frame  24000 time  480.000   Skipping frame  25000 time  500.000   Skipping frame  26000 time  520.000   Skipping frame  27000 time  540.000   Skipping frame  28000 time  560.000   Skipping frame  29000 time  580.000   Skipping frame  30000 time  600.000   Skipping frame  31000 time  620.000   Skipping frame  32000 time  640.000   Skipping frame  33000 time  660.000   Skipping frame  34000 time  680.000   Skipping frame  35000 time  700.000   Skipping frame  36000 time  720.000   Skipping frame  37000 time  740.000   Skipping frame  38000 time  760.000   Skipping frame  39000 time  780.000   Skipping frame  40000 time  800.000   Skipping frame  41000 time  820.000   Skipping frame  42000 time  840.000   Skipping frame  43000 time  860.000   Skipping frame  44000 time  880.000   Skipping frame  45000 time  900.000   Skipping frame  46000 time  920.000   Skipping frame  47000 time  940.000   Skipping frame  48000 time  960.000   Skipping frame  49000 time  980.000   Skipping frame  50000 time 1000.000   Skipping frame  51000 time 1020.000   Skipping frame  52000 time 1040.000   Skipping frame  53000 time 1060.000   Skipping frame  54000 time 1080.000   Skipping frame  55000 time 1100.000   Skipping frame  56000 time 1120.000   Skipping frame  57000 time 1140.000   Skipping frame  58000 time 1160.000   Skipping frame  59000 time 1180.000   Skipping frame  60000 time 1200.000   Skipping frame  61000 time 1220.000   Skipping frame  62000 time 1240.000   Skipping frame  63000 time 1260.000   Skipping frame  64000 time 1280.000   Skipping frame  65000 time 1300.000   Skipping frame  66000 time 1320.000   Skipping frame  67000 time 1340.000   Skipping frame  68000 time 1360.000   Skipping frame  69000 time 1380.000   Skipping frame  70000 time 1400.000   Skipping frame  71000 time 1420.000   Skipping frame  72000 time 1440.000   Skipping frame  73000 time 1460.000   Skipping frame  74000 time 1480.000   Skipping frame  75000 time 1500.000   Skipping frame  76000 time 1520.000   Skipping frame  77000 time 1540.000   Skipping frame  78000 time 1560.000   Skipping frame  79000 time 1580.000   Skipping frame  80000 time 1600.000   Skipping frame  81000 time 1620.000   Skipping frame  82000 time 1640.000   Skipping frame  83000 time 1660.000   Skipping frame  84000 time 1680.000   Skipping frame  85000 time 1700.000   Skipping frame  86000 time 1720.000   Skipping frame  87000 time 1740.000   Skipping frame  88000 time 1760.000   Skipping frame  89000 time 1780.000   Skipping frame  90000 time 1800.000   Skipping frame  91000 time 1820.000   Skipping frame  92000 time 1840.000   Skipping frame  93000 time 1860.000   Skipping frame  94000 time 1880.000   Skipping frame  95000 time 1900.000   Skipping frame  96000 time 1920.000   Skipping frame  97000 time 1940.000   Skipping frame  98000 time 1960.000   Skipping frame  99000 time 1980.000   Skipping frame 100000 time 2000.000   Skipping frame 101000 time 2020.000   Skipping frame 102000 time 2040.000   Skipping frame 103000 time 2060.000   Skipping frame 104000 time 2080.000   Skipping frame 105000 time 2100.000   Skipping frame 106000 time 2120.000   Skipping frame 107000 time 2140.000   Skipping frame 108000 time 2160.000   Skipping frame 109000 time 2180.000   Skipping frame 110000 time 2200.000   Skipping frame 111000 time 2220.000   Skipping frame 112000 time 2240.000   Skipping frame 113000 time 2260.000   Skipping frame 114000 time 2280.000   Skipping frame 115000 time 2300.000   Skipping frame 116000 time 2320.000   Skipping frame 117000 time 2340.000   Skipping frame 118000 time 2360.000   Skipping frame 119000 time 2380.000   Skipping frame 120000 time 2400.000   Skipping frame 121000 time 2420.000   Skipping frame 122000 time 2440.000   Skipping frame 123000 time 2460.000   Skipping frame 124000 time 2480.000   Skipping frame 125000 time 2500.000   Skipping frame 126000 time 2520.000   Skipping frame 127000 time 2540.000   Skipping frame 128000 time 2560.000   Skipping frame 129000 time 2580.000   Skipping frame 130000 time 2600.000   Skipping frame 131000 time 2620.000   Skipping frame 132000 time 2640.000   Skipping frame 133000 time 2660.000   Skipping frame 134000 time 2680.000   Skipping frame 135000 time 2700.000   Skipping frame 136000 time 2720.000   Skipping frame 137000 time 2740.000   Skipping frame 138000 time 2760.000   Skipping frame 139000 time 2780.000   Skipping frame 140000 time 2800.000   Skipping frame 141000 time 2820.000   Skipping frame 142000 time 2840.000   Skipping frame 143000 time 2860.000   Skipping frame 144000 time 2880.000   Skipping frame 145000 time 2900.000   Skipping frame 146000 time 2920.000   Skipping frame 147000 time 2940.000   Skipping frame 148000 time 2960.000   Skipping frame 149000 time 2980.000   Skipping frame 150000 time 3000.000   Skipping frame 151000 time 3020.000   Skipping frame 152000 time 3040.000   Skipping frame 153000 time 3060.000   Skipping frame 154000 time 3080.000   Skipping frame 155000 time 3100.000   Skipping frame 156000 time 3120.000   Skipping frame 157000 time 3140.000   Skipping frame 158000 time 3160.000   Skipping frame 159000 time 3180.000   Skipping frame 160000 time 3200.000   Skipping frame 161000 time 3220.000   Skipping frame 162000 time 3240.000   Skipping frame 163000 time 3260.000   Skipping frame 164000 time 3280.000   Skipping frame 165000 time 3300.000   Skipping frame 166000 time 3320.000   Skipping frame 167000 time 3340.000   Skipping frame 168000 time 3360.000   Skipping frame 169000 time 3380.000   Skipping frame 170000 time 3400.000   Skipping frame 171000 time 3420.000   Skipping frame 172000 time 3440.000   Skipping frame 173000 time 3460.000   Skipping frame 174000 time 3480.000   Skipping frame 175000 time 3500.000   Skipping frame 176000 time 3520.000   Skipping frame 177000 time 3540.000   Skipping frame 178000 time 3560.000   Skipping frame 179000 time 3580.000   Skipping frame 180000 time 3600.000   Skipping frame 181000 time 3620.000   Skipping frame 182000 time 3640.000   Skipping frame 183000 time 3660.000   Skipping frame 184000 time 3680.000   Skipping frame 185000 time 3700.000   Skipping frame 186000 time 3720.000   Skipping frame 187000 time 3740.000   Skipping frame 188000 time 3760.000   Skipping frame 189000 time 3780.000   Skipping frame 190000 time 3800.000   Skipping frame 191000 time 3820.000   Skipping frame 192000 time 3840.000   Skipping frame 193000 time 3860.000   Skipping frame 194000 time 3880.000   Skipping frame 195000 time 3900.000   Skipping frame 196000 time 3920.000   Skipping frame 197000 time 3940.000   Skipping frame 198000 time 3960.000   Skipping frame 199000 time 3980.000   Reading frame  200000 time 4000.000   Reading frame  201000 time 4020.000   Reading frame  202000 time 4040.000   Reading frame  203000 time 4060.000   Reading frame  204000 time 4080.000   Reading frame  205000 time 4100.000   Reading frame  206000 time 4120.000   Reading frame  207000 time 4140.000   Reading frame  208000 time 4160.000   Reading frame  209000 time 4180.000   Reading frame  210000 time 4200.000   Reading frame  211000 time 4220.000   Reading frame  212000 time 4240.000   Reading frame  213000 time 4260.000   Reading frame  214000 time 4280.000   Reading frame  215000 time 4300.000   Reading frame  216000 time 4320.000   Reading frame  217000 time 4340.000   Reading frame  218000 time 4360.000   Reading frame  219000 time 4380.000   Reading frame  220000 time 4400.000   Reading frame  221000 time 4420.000   Reading frame  222000 time 4440.000   Reading frame  223000 time 4460.000   Reading frame  224000 time 4480.000   Reading frame  225000 time 4500.000   Reading frame  226000 time 4520.000   Reading frame  227000 time 4540.000   Reading frame  228000 time 4560.000   Reading frame  229000 time 4580.000   Reading frame  230000 time 4600.000   Reading frame  231000 time 4620.000   Reading frame  232000 time 4640.000   Reading frame  233000 time 4660.000   Reading frame  234000 time 4680.000   Reading frame  235000 time 4700.000   Reading frame  236000 time 4720.000   Reading frame  237000 time 4740.000   Reading frame  238000 time 4760.000   Reading frame  239000 time 4780.000   Reading frame  240000 time 4800.000   Reading frame  241000 time 4820.000   Reading frame  242000 time 4840.000   Reading frame  243000 time 4860.000   Reading frame  244000 time 4880.000   Reading frame  245000 time 4900.000   Reading frame  246000 time 4920.000   Reading frame  247000 time 4940.000   Reading frame  248000 time 4960.000   Reading frame  249000 time 4980.000   Reading frame  250000 time 5000.000   Reading frame  251000 time 5020.000   Reading frame  252000 time 5040.000   Reading frame  253000 time 5060.000   Reading frame  254000 time 5080.000   Reading frame  255000 time 5100.000   Reading frame  256000 time 5120.000   Reading frame  257000 time 5140.000   Reading frame  258000 time 5160.000   Reading frame  259000 time 5180.000   Reading frame  260000 time 5200.000   Reading frame  261000 time 5220.000   Reading frame  262000 time 5240.000   Reading frame  263000 time 5260.000   Reading frame  264000 time 5280.000   Reading frame  265000 time 5300.000   Reading frame  266000 time 5320.000   Reading frame  267000 time 5340.000   Reading frame  268000 time 5360.000   Reading frame  269000 time 5380.000   Reading frame  270000 time 5400.000   Reading frame  271000 time 5420.000   Reading frame  272000 time 5440.000   Reading frame  273000 time 5460.000   Reading frame  274000 time 5480.000   Reading frame  275000 time 5500.000   Reading frame  276000 time 5520.000   Reading frame  277000 time 5540.000   Reading frame  278000 time 5560.000   Reading frame  279000 time 5580.000   Reading frame  280000 time 5600.000   Reading frame  281000 time 5620.000   Reading frame  282000 time 5640.000   Reading frame  283000 time 5660.000   Reading frame  284000 time 5680.000   Reading frame  285000 time 5700.000   Reading frame  286000 time 5720.000   Reading frame  287000 time 5740.000   Reading frame  288000 time 5760.000   Reading frame  289000 time 5780.000   Reading frame  290000 time 5800.000   Reading frame  291000 time 5820.000   Reading frame  292000 time 5840.000   Reading frame  293000 time 5860.000   Reading frame  294000 time 5880.000   Reading frame  295000 time 5900.000   Reading frame  296000 time 5920.000   Reading frame  297000 time 5940.000   Reading frame  298000 time 5960.000   Reading frame  299000 time 5980.000   Reading frame  300000 time 6000.000   Reading frame  301000 time 6020.000   Reading frame  302000 time 6040.000   Reading frame  303000 time 6060.000   Reading frame  304000 time 6080.000   Reading frame  305000 time 6100.000   Reading frame  306000 time 6120.000   Reading frame  307000 time 6140.000   Reading frame  308000 time 6160.000   Reading frame  309000 time 6180.000   Reading frame  310000 time 6200.000   Reading frame  311000 time 6220.000   Reading frame  312000 time 6240.000   Reading frame  313000 time 6260.000   Reading frame  314000 time 6280.000   Reading frame  315000 time 6300.000   Reading frame  316000 time 6320.000   Reading frame  317000 time 6340.000   Reading frame  318000 time 6360.000   Reading frame  319000 time 6380.000   Reading frame  320000 time 6400.000   Reading frame  321000 time 6420.000   Reading frame  322000 time 6440.000   Reading frame  323000 time 6460.000   Reading frame  324000 time 6480.000   Reading frame  325000 time 6500.000   Reading frame  326000 time 6520.000   Reading frame  327000 time 6540.000   Reading frame  328000 time 6560.000   Reading frame  329000 time 6580.000   Reading frame  330000 time 6600.000   Reading frame  331000 time 6620.000   Reading frame  332000 time 6640.000   Reading frame  333000 time 6660.000   Reading frame  334000 time 6680.000   Reading frame  335000 time 6700.000   Reading frame  336000 time 6720.000   Reading frame  337000 time 6740.000   Reading frame  338000 time 6760.000   Reading frame  339000 time 6780.000   Reading frame  340000 time 6800.000   Reading frame  341000 time 6820.000   Reading frame  342000 time 6840.000   Reading frame  343000 time 6860.000   Reading frame  344000 time 6880.000   Reading frame  345000 time 6900.000   Reading frame  346000 time 6920.000   Reading frame  347000 time 6940.000   Reading frame  348000 time 6960.000   Reading frame  349000 time 6980.000   Reading frame  350000 time 7000.000   Reading frame  351000 time 7020.000   Reading frame  352000 time 7040.000   Reading frame  353000 time 7060.000   Reading frame  354000 time 7080.000   Reading frame  355000 time 7100.000   Reading frame  356000 time 7120.000   Reading frame  357000 time 7140.000   Reading frame  358000 time 7160.000   Reading frame  359000 time 7180.000   Reading frame  360000 time 7200.000   Reading frame  361000 time 7220.000   Reading frame  362000 time 7240.000   Reading frame  363000 time 7260.000   Reading frame  364000 time 7280.000   Reading frame  365000 time 7300.000   Reading frame  366000 time 7320.000   Reading frame  367000 time 7340.000   Reading frame  368000 time 7360.000   Reading frame  369000 time 7380.000   Reading frame  370000 time 7400.000   Reading frame  371000 time 7420.000   Reading frame  372000 time 7440.000   Reading frame  373000 time 7460.000   Reading frame  374000 time 7480.000   Reading frame  375000 time 7500.000   Reading frame  376000 time 7520.000   Reading frame  377000 time 7540.000   Reading frame  378000 time 7560.000   Reading frame  379000 time 7580.000   Reading frame  380000 time 7600.000   Reading frame  381000 time 7620.000   Reading frame  382000 time 7640.000   Reading frame  383000 time 7660.000   Reading frame  384000 time 7680.000   Reading frame  385000 time 7700.000   Reading frame  386000 time 7720.000   Reading frame  387000 time 7740.000   Reading frame  388000 time 7760.000   Reading frame  389000 time 7780.000   Reading frame  390000 time 7800.000   Reading frame  391000 time 7820.000   Reading frame  392000 time 7840.000   Reading frame  393000 time 7860.000   Reading frame  394000 time 7880.000   Reading frame  395000 time 7900.000   Reading frame  396000 time 7920.000   Reading frame  397000 time 7940.000   Reading frame  398000 time 7960.000   Reading frame  399000 time 7980.000   Reading frame  400000 time 8000.000   Last frame     400000 time 8000.000   
-WARNING: Incomplete header: nr 400001 time 8000
-
-Back Off! I just backed up tcaf_all.xvg to ./#tcaf_all.xvg.3#
-
-Back Off! I just backed up tcaf.xvg to ./#tcaf.xvg.3#
-
-Back Off! I just backed up tcaf_fit.xvg to ./#tcaf_fit.xvg.3#
-
-GROMACS reminds you: "No matter how important you are, you are not as important as lunch." (Randy Pausch)
-
-                      :-) GROMACS - gmx grompp, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx grompp, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/gmx
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  gmx grompp -f NVT2.mdp -c NPT.gro -p topol.top -o NVT2.tpr -maxwarn 3 -t NPT.cpt
-
-Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
-
-Back Off! I just backed up mdout.mdp to ./#mdout.mdp.5#
-
-NOTE 1 [file NVT2.mdp]:
-  The group cutoff scheme is deprecated since GROMACS 5.0 and will be
-  removed in a future release when all interaction forms are supported for
-  the verlet scheme. The verlet scheme already scales better, and it is
-  compatible with GPUs and other accelerators.
-
-
-NOTE 2 [file NVT2.mdp]:
-  The Berendsen thermostat does not generate the correct kinetic energy
-  distribution. You might want to consider using the V-rescale thermostat.
-
-Setting the LD random seed to -2113523597
-Generated 168 of the 1653 non-bonded parameter combinations
-Excluding 1 bonded neighbours molecule type 'AR'
-Number of degrees of freedom in T-Coupling group System is 2997.00
-
-WARNING 1 [file NVT2.mdp]:
-  You are using full electrostatics treatment PME-User for a system without
-  charges.
-  This costs a lot of performance for just processing zeros, consider using
-  Cut-off instead.
-
-
-Reading Coordinates, Velocities and Box size from old trajectory
-Will read whole trajectory
-Last frame         -1 time 60000.000   
-Using frame at t = 60000 ps
-Starting time for run is 0 ps
-Estimate for the relative computational load of the PME mesh part: 0.25
-
-There were 2 notes
-
-There was 1 warning
-
-GROMACS reminds you: "We'll celebrate a woman for anything, as long as it's not her talent." (Colleen McCullough)
-
-                        :-) GROMACS - mdrun, 2016.1 (-:
-
-                            GROMACS is written by:
-     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
- Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
- Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
-    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
-  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
-   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
-  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
-  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2015, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      mdrun, version 2016.1
-Executable:   /sw/sdev/Modules/gromacs/gromacs-2016.1/bin/mdrun
-Data prefix:  /sw/sdev/Modules/gromacs/gromacs-2016.1
-Working dir:  /home/ntnu/pousaneh/Simulations/Confiremd/AR_HS_2019/P9000
-Command line:
-  mdrun -s NVT2.tpr -deffnm NVT2 -table Table_HS_modif.xvg
-
-
-Running on 1 node with total 16 cores, 32 logical cores
-Hardware detected on host r10i2n1 (the node of MPI rank 0):
-  CPU info:
-    Vendor: Intel
-    Brand:  Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
-    SIMD instructions most likely to fit this hardware: AVX_256
-    SIMD instructions selected at GROMACS compile time: AVX_256
-
-  Hardware topology: Basic
-
-
-The current CPU can measure timings more accurately than the code in
-mdrun was configured to use. This might affect your simulation
-speed as accurate timings are needed for load-balancing.
-Please consider rebuilding mdrun with the GMX_USE_RDTSCP=ON CMake option.
-
-Reading file NVT2.tpr, VERSION 2016.1 (single precision)
-The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
-Using 16 MPI processes
-
-
-NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
-removed in a future release when 'verlet' supports all interaction forms.
-
-
-Non-default thread affinity set probably by the OpenMP library,
-disabling internal thread affinity
-starting mdrun 'Liquid Argon'
-4000000 steps,   8000.0 ps.
-
-step 31000 Turning on dynamic load balancing, because the performance loss due to load imbalance is 2.1 %.
-
-
-step 752200 Turning off dynamic load balancing, because it is degrading performance.
-
-
-Writing final coordinates.
-
- Average load imbalance: 3.5 %
- Part of the total run time spent waiting due to load imbalance: 0.6 %
-
-
-               Core t (s)   Wall t (s)        (%)
-       Time:    11147.356      696.710     1600.0
-                 (ns/day)    (hour/ns)
-Performance:      992.092        0.024
-
-GROMACS reminds you: "Your Proposal is Accepted" (Men In Black)
-
